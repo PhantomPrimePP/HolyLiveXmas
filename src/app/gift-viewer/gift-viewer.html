@@ -1,0 +1,33 @@
+<h2 class="title">{{ data.name }}</h2>
+
+<div class="viewer-wrapper" [style.transform]="'scale(' + dialogSize + ')'">
+
+<div class="media-container">
+
+  <!-- IMAGE -->
+  <img *ngIf="isImage()" [src]="data.url" class="media-image" />
+
+  <!-- AUDIO -->
+  <audio *ngIf="isAudio()" controls class="media-audio">
+    <source [src]="data.url" type="audio/mpeg" />
+  </audio>
+
+  <!-- VIDEO -->
+  <video *ngIf="isVideo()" controls class="media-video">
+    <source [src]="data.url" type="video/mp4" />
+  </video>
+
+  <!-- MESSAGE -->
+  <div  *ngIf="isMessage()" class="message-card">
+    <p>{{ data.message }}</p>
+  </div>
+
+</div>
+
+<div class="btn-area">
+  <button mat-button color="primary" (click)="dialogRef.close()">
+    Close
+  </button>
+</div>
+
+</div>

@@ -1,0 +1,32 @@
+<div class="room-wrapper">
+
+  <!-- TOP 50%: room artwork background (cover) -->
+  <div class="room-top"></div>
+
+  <!-- BOTTOM 50%: crimson floor + gift layer -->
+  <div class="room-bottom">
+    <div class="confetti-container"></div>
+    <div class="gifts-layer">
+      <div class="refresh-container">
+  <button class="refresh-btn" (click)="refreshGifts()">
+    🔄 Refresh Gifts
+  </button>
+</div>
+      <div
+        class="gift-box"
+        *ngFor="let gift of gifts; let i = index"
+        [style.left.%]="giftPositions[i]?.x"
+        [style.top.%]="giftPositions[i]?.y"
+        (click)="openGift(gift)"
+        title="{{ gift.Name || gift.name }}"
+      >
+        <img [src]="getBoxImageSrc(gift)" class="gift-icon" alt="gift box">
+      </div>
+
+      <!-- If no gifts, show small hint -->
+      <div *ngIf="gifts.length === 0" class="no-gifts-hint">
+        No gifts yet — upload one from Create a Gift!
+      </div>
+    </div>
+  </div>
+</div>

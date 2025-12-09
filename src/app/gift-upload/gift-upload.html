@@ -1,0 +1,54 @@
+<h2 mat-dialog-title>Present your gift for MisaMisaVT! 🎁</h2>
+
+<mat-dialog-content>
+
+  <!-- Name -->
+  <mat-form-field appearance="fill" class="full">
+    <mat-label>Your Name</mat-label>
+    <input matInput [(ngModel)]="giftData.name">
+  </mat-form-field>
+
+  <br>
+
+  <!-- Gift Type Selection -->
+  <mat-label>Gift Type</mat-label>
+  <mat-select [(ngModel)]="giftData.type">
+    <mat-option value="file">Upload File</mat-option>
+    <mat-option value="message">Write Message</mat-option>
+  </mat-select>
+
+  <br><br>
+
+  <!-- FILE Upload Section -->
+  <div *ngIf="giftData.type === 'file'">
+    <label>Upload File (PNG / MP4 / MP3):</label>
+    <input type="file" (change)="onFileSelected($event)" accept=".png,.jpg,.jpeg,.mp4,.mp3,.wav">
+  </div>
+
+  <!-- MESSAGE Section -->
+  <div *ngIf="giftData.type === 'message'">
+    <mat-form-field appearance="fill" class="full">
+      <mat-label>Your Message</mat-label>
+      <textarea matInput rows="4" [(ngModel)]="giftData.message"></textarea>
+    </mat-form-field>
+  </div>
+
+  <br>
+
+  <!-- Gift Box -->
+  <mat-form-field appearance="fill" class="full">
+    <mat-label>Select Gift Box</mat-label>
+    <mat-select [(value)]="giftData.boxImage">
+      <mat-option *ngFor="let box of giftBoxes" [value]="box.image">
+        <img [src]="box.image" width="30" height="30" style="margin-right:10px;">
+        {{ box.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="submit()">Submit</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

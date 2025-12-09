@@ -1,0 +1,134 @@
+/* Full-page wrapper split 50/50 */
+.room-wrapper {
+  width: 100%;
+  display: block; /* natural vertical stacking */
+}
+
+/* Top: background room artwork */
+.room-top {
+  width: 100%;
+  background-image: url('/Pictures/Misa-Xmas.png');
+  background-size: contain;       /* show full image */
+  background-repeat: no-repeat;
+  background-position: top center;
+
+  /* Let the div resize based on the natural image ratio */
+  aspect-ratio: 1917 / 1073;
+
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+
+/* Bottom: crimson floor area */
+.room-bottom {
+  background: #7a0f1a;
+  height: 1001px;   /* YOU can adjust later */
+  position: relative;
+  overflow: hidden;
+  padding-top: 20px;
+}
+
+
+
+
+/* Layer that holds gifts (positioned in bottom area) */
+.gifts-layer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Single gift box (absolute positioned inside bottom-area) */
+.gift-box {
+  position: absolute;
+  transform: translate(-50%, -50%); /* center the image on the point */
+  z-index: 30; /* ensure it's above everything */
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  user-select: none;
+}
+.gift-box:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* Gift icon sizing (responsive) */
+.gift-icon {
+  display: block;
+  width: 8vw;            /* proportional to viewport width */
+  max-width: 90px;       /* limit on large screens */
+  min-width: 36px;       /* limit on small screens */
+  height: auto;
+  pointer-events: none;  /* so click handled by parent */
+}
+
+/* Hint text when no gifts */
+.no-gifts-hint {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color: rgba(255,255,255,0.9);
+  font-weight: 600;
+  text-align: center;
+  padding: 12px 18px;
+  background: rgba(0,0,0,0.18);
+  border-radius: 8px;
+}
+
+/* small responsive tweaks */
+@media (max-width: 720px) {
+  .gift-icon { width: 14vw; max-width: 64px; }
+  .room-top { height: 45vh; }
+  .room-bottom { height: 55vh; }
+}
+.refresh-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 50;
+}
+
+.refresh-btn {
+  background: #ffd523;      /* yellow gold */
+  border: none;
+  border-radius: 50px;
+  padding: 10px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  font-weight: bold;
+  transition: 150ms;
+}
+
+.refresh-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.35);
+}
+.confetti-container {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 12px;
+  background: red;
+  opacity: 0.9;
+  transform: rotate(15deg);
+  animation: confetti-fall 700ms ease-out forwards;
+  border-radius: 2px;
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(80px) rotate(360deg); opacity: 0; }
+}

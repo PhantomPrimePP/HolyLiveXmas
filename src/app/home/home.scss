@@ -1,0 +1,294 @@
+.container {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.buttons button {
+  margin: 10px;
+}
+.video-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  /* Create the border frame */
+  border: 20px solid black;
+  box-sizing: border-box;
+
+  /* Optional: Slight shadow for depth */
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+
+  overflow: hidden;
+}
+
+/* FULLSCREEN BACKGROUND VIDEO */
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* completely fills screen */
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* make video not interactable */
+}
+
+/* NEXT BUTTON FIXED AT BOTTOM */
+.next-btn-bottom {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  padding: 14px 26px;
+  background: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+  transition: 0.2s ease;
+}
+
+.next-btn-bottom:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+
+/* Container for both halves */
+.page-two {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Each section takes 50% height */
+.section {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically & horizontally */
+  flex-direction: column;
+}
+
+/* COLORS */
+.top-section {
+  background: #7a0f1a; /* crimson */
+}
+
+.bottom-section {
+  background: #b8e7ff; /* light winter blue */
+}
+
+/* SNOW ANIMATION */
+.snowflakes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10%;
+  color: white;
+  font-size: 24px;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+/* FALLING ANIMATION */
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) translateX(20px);
+    opacity: 0.3;
+  }
+}
+
+.snowflake:nth-child(1) { left: 10%; animation-duration: 8s; font-size: 28px; }
+.snowflake:nth-child(2) { left: 25%; animation-duration: 12s; font-size: 32px; }
+.snowflake:nth-child(3) { left: 40%; animation-duration: 10s; font-size: 26px; }
+.snowflake:nth-child(4) { left: 55%; animation-duration: 14s; font-size: 30px; }
+.snowflake:nth-child(5) { left: 70%; animation-duration: 9s; font-size: 24px; }
+.snowflake:nth-child(6) { left: 85%; animation-duration: 13s; font-size: 34px; }
+
+
+
+
+
+
+/* Buttons in sections */
+.next-btn-section {
+  padding: 14px 28px;
+  background: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.next-btn-section:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.bg-video {
+  pointer-events: auto; /* allow autoplay */
+}
+
+.full-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;     /* stack children vertically */
+  justify-content: flex-start; /* start content at top */
+  align-items: center;         /* keep layout centered horizontally */
+}
+
+/* Background colors */
+.not-misa-page {
+  background: #7a0f1a; /* deep crimson */
+}
+
+.misa-page {
+  background: #b8e7ff; /* soft icy blue */
+}
+
+/* Center card */
+.message-card {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 16px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  text-align: center;
+  z-index: 10;
+  max-height: 70vh;       /* card never grows past 70% of screen */
+  overflow-y: auto;
+   padding-right: 12px; 
+}
+.message-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+.message-card::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.25);
+  border-radius: 10px;
+}
+
+.message-card::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.4);
+}
+.center-content {
+  justify-content: center !important;
+}
+.message-title {
+   font-family: 'Mountains of Christmas', cursive;
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: #000000;
+}
+
+.message-text {
+   font-family: 'DynaPuff', serif;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 26px;
+  color: #000000;
+}
+
+.final-split {
+  padding: 40px 20px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;  /* stack snow + cards vertically */
+  align-items: center;     /* center horizontally */
+  justify-content: flex-start;
+}
+
+.final-split-inner {
+  display: flex;             /* Allow two columns */
+  flex-direction: row;       /* Side-by-side */
+  gap: 30px;                 /* Space between cards */
+  width: 90%;
+  max-width: 1100px;
+  justify-content: center;
+}
+
+.left-card, .submission-card {
+  flex: 1;                   /* Make both sides equal width */
+}
+
+.center-next-btn {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+/* Add spacing between buttons */
+.submission-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;                 /* Space between Create / View buttons */
+  margin-top: 25px;
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+  .final-split-inner {
+    flex-direction: column; /* Stack vertically */
+  }
+}
+.volume-control {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  padding: 8px 14px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.volume-control input[type="range"] {
+  width: 120px;
+  cursor: pointer;
+}
+
+.volume-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}

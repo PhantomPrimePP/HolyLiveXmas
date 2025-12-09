@@ -1,0 +1,320 @@
+<div class="xmas-bg">
+  <audio #bgMusic src="/Pictures/Christmas-Music.mp3" preload="auto" loop></audio>
+  <div class="volume-control">
+    <input type="range" min="0" max="100" [value]="volume" (input)="changeVolume($event)">
+    <span class="volume-label">🔊 {{ volume }}%</span>
+  </div>
+  <!-- PAGE 1 — VIDEO INTRO -->
+  <div *ngIf="currentPage === 1" class="video-page">
+    <video #bgVideo autoplay muted loop playsinline webkit-playsinline preload="auto" class="bg-video">
+      <source src="/Pictures/MerryChristmas.mp4" type="video/mp4">
+    </video>
+
+    <button class="next-btn-bottom" (click)="goToPage(2)">
+      Next
+    </button>
+  </div>
+
+
+  <!-- PAGE 2 — CHOOSE MISA / NOT MISA -->
+  <div *ngIf="currentPage === 2" class="page-two">
+
+    <!-- TOP: NOT MISA -->
+    <div class="section top-section">
+      <div class="snowflakes">
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❄</div>
+      </div>
+
+      <h1 class="choice-title" style="color: cyan; font-family: 'Mountains of Christmas', serif;">Who are you???</h1>
+      <button class="next-btn-section" style="font-family: 'DynaPuff', serif;" (click)="goToPage(3)">
+        If You Are Not Misa!
+      </button>
+    </div>
+
+    <!-- BOTTOM: MISA -->
+    <div class="section bottom-section">
+      <div class="snowflakes">
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❄</div>
+      </div>
+
+   
+      <button class="next-btn-section"  style="font-family: 'DynaPuff', serif;" (click)="goToPage(4)">
+        If You Are Misa!
+      </button>
+    </div>
+
+  </div>
+
+
+  <!-- PAGE 3 — NOT MISA: FIRST CARD -->
+  <div *ngIf="currentPage === 3" class="full-page not-misa-page ">
+    <div class="final-split">
+      <div class="snowflakes">
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❆</div>
+      </div>
+
+      <div class="final-split-inner">
+
+        <!-- LEFT CARD — Your Community Message -->
+        <div class="message-card left-card">
+          <h2 class="message-title">Lovely and Beloved Community of Misa! ♥</h2>
+
+          <!-- YOUR formatted message -->
+          <p class="message-text" style="font-family: 'Cormorant Garamond', serif; line-height: 1.6;">
+            Merry Christmas guys!
+            This message is from me to ALL OF YOU!
+            Whether you are mods , VIPs , Viewers, whenever you joined by following misa,
+            You guys are part of this community.
+            And this right here is an appreciation for all you guys supporting misa.
+            You guys are the best and deserve all the happy things you can get!
+            I hope that next year we will all still be friends as we are
+            and have the BEST next year.
+
+            <br><br>
+
+            I want to appreciate and thank everyone one by one:
+
+            <br><br>
+
+            <b>Mods</b> - Thank you for being there for misa, supporting her, being there on her stream,
+            Helping her with tech off stream , protecting her and most of all streaming is fun
+            and nice but scary at same time.
+            So thank you for being there and being a friend of misa and having her back.
+
+            <br><br>
+
+            <b>VIPS</b> - Thank you guys for your support as you guys are one of the OG viewers
+            who watched misa from start till where she is now.
+            You guys have been consistantly supporting misa all this time
+            and being there in most of her stream motivating her to stream as much as she can
+            and Happily as well!
+
+            <br><br>
+
+            <b>Viewers</b> - Thank you you guys as well for being there for Misa even if you just pop
+            in to say hi, or you chat with her , Cheer her when she plays games or singing or
+            just lurking , You guys are the best and one of the reasons misa is soo happy
+            and enjoying streaming. Appreciate you all equally!
+
+            <br><br>
+
+            <b>Streamer friends</b> - Thank you all for being misa's streamer buddies
+            whom she can raid freely and gets loved when she drops in
+            or you guys raid her when she is streaming
+            and exchanging your community with each other.
+            I appreciate you guys and wish you all the best in your streams as well!
+
+            <br><br>
+
+            Thank your reading my yapping gangalang but I will end it with
+            <b>Merry Christmas and Happy New Year.</b>
+            Love and Appreciate all of you guys
+          </p>
+
+
+        </div>
+
+        <!-- RIGHT CARD — Message For Someone Else -->
+        <div class="message-card submission-card">
+          <h2 class="message-title" style="font-family: 'Mountains of Christmas', cursive;">
+            Special Message For Someone Else 🎄
+          </h2>
+
+          <p class="message-text" style="font-family: 'Cormorant Garamond', serif;">
+            Write your custom personal message here.
+            This can be for one specific friend, supporter,
+            or someone special in the community.
+            (You can fill this later.)
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="center-next-btn">
+      <button class="next-btn-section" (click)="goToPage(5)">
+        Next
+      </button>
+    </div>
+  </div>
+
+
+
+  <!-- PAGE 4 — MISA: FIRST CARD -->
+  <div *ngIf="currentPage === 4" class="full-page misa-page center-content">
+    <div class="snowflakes">
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❄</div>
+    </div>
+
+  <div class="message-card">
+  <h2 class="message-title">My Oshi — MisaMisaVT 💙</h2>
+
+  <p class="message-text" style="font-family: 'DynaPuff', serif;">
+
+    <span class="intro-line">
+      For the Cutest, Prettiest and Bestest MisaMisaVT —
+    </span>
+    <br>
+    <strong>Merry Christmas Misa!</strong>
+
+    <br><br>
+
+    More than a year passed since you started streaming, and I see that from  
+    20 followers vtuber MisaMisa123456streaming WUWA  
+    to currently MisaMisaVT with almost 3k followers 
+    (or 3K by the time you see this),  
+    <strong>I am SUPPPPAAHHH PROUD OF YOU!!</strong>
+
+    <br><br>
+
+    You have been playing WUWA, singing every week for us, doing just chatting,  
+    drawing us, going bald, and most importantly  
+    you give everyone who comes a warm welcome with a smile  
+    to everyone who joins your stream.
+
+    <br><br>
+
+    In my eyes <b>you are one of the best streamers</b>.  
+    I loved seeing you grow as you are still growing  
+    and most importantly you staying happy and always smiling.
+
+    <br><br>
+
+    I know that you have tough times —  
+    no matter how big you grow or how famous you become,  
+    at the end you are just a girl doing her best in life.
+
+    <br><br>
+
+    And me, as a MisaMisaVT fan and a friend,  
+    I want to and will support you the best I can.  
+    No matter how tough life gets, know you have people by your side  
+    that will love and support you the best they can.
+
+    <br><br>
+
+    <b>Continue ---</b>
+  </p>
+
+  <button class="next-btn-section" (click)="goToPage(6)">
+    Next
+  </button>
+</div>
+
+  </div>
+
+
+  <!-- PAGE 5 — NOT MISA: SECOND CARD + SUBMISSION COLUMN -->
+  <div *ngIf="currentPage === 5" class="full-page not-misa-page final-split">
+
+    <div class="snowflakes">
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❄</div>
+    </div>
+
+    <div class="final-split-inner">
+
+      <!-- LEFT: SECOND MESSAGE CARD -->
+      <div class="message-card left-card">
+        <h2 class="message-title" style="font-family: 'Mountains of Christmas', cursive;">Another Message For You ♥</h2>
+        <p class="message-text" style="font-family: 'Cormorant Garamond', serif;">
+          Second layer of text for non-Misa people —
+          more jokes, love, or instructions for the event 🎄
+        </p>
+      </div>
+
+      <!-- RIGHT: SUBMISSION CARD (CREATE + VIEW) -->
+      <div class="message-card submission-card">
+        <h2 class="message-title">Join The Christmas Gift Wall 🎁</h2>
+        <p class="message-text" >
+          Create a gift for Misa or everyone,
+          and then visit the Christmas Room to see all gifts.
+        </p>
+
+        <div class="submission-buttons">
+          <button class="next-btn-section" (click)="openGiftUpload()">
+            Create a Gift
+          </button>
+
+          <button class="next-btn-section" routerLink="/room">
+            View Christmas Room
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- PAGE 6 — MISA: SECOND CARD WITH JUST "VIEW CHRISTMAS ROOM" -->
+  <div *ngIf="currentPage === 6" class="full-page misa-page center-content">
+    <div class="snowflakes">
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❄</div>
+    </div>
+
+    <div class="message-card">
+      <h2 class="message-title">Final Message For Misa 💙</h2>
+      <p class="message-text" style="font-family: 'Cormorant Garamond', serif;">
+        Your second, extra-special message for Misa goes here —
+        the really emotional / sweet / chaotic part only she sees 💙
+      </p>
+
+      <button class="next-btn-section" routerLink="/room">
+        View Christmas Room
+      </button>
+    </div>
+  </div>
+
+</div>

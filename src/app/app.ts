@@ -1,12 +1,25 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { GiftUpload } from './gift-upload/gift-upload';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet,
+    GiftUpload,
+    RouterLink,RouterModule
+  ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('christmas-project');
+  constructor(private dialog: MatDialog) {}
+
+  openGiftUpload() {
+    this.dialog.open(GiftUpload, {
+      width: '500px'
+    });
+  }
 }
