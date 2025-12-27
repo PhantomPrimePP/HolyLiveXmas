@@ -1,320 +1,611 @@
-<div class="xmas-bg">
-  <audio #bgMusic src="/Pictures/Christmas-Music.mp3" preload="auto" loop></audio>
-  <div class="volume-control">
-    <input type="range" min="0" max="100" [value]="volume" (input)="changeVolume($event)">
-    <span class="volume-label">🔊 {{ volume }}%</span>
-  </div>
-  <!-- PAGE 1 — VIDEO INTRO -->
-  <div *ngIf="currentPage === 1" class="video-page">
-    <video #bgVideo autoplay muted loop playsinline webkit-playsinline preload="auto" class="bg-video">
-      <source src="/Pictures/MerryChristmas.mp4" type="video/mp4">
-    </video>
-
-    <button class="next-btn-bottom" (click)="goToPage(2)">
-      Next
+<div *ngIf="pageFor === 'Misa'">
+  <div class="xmas-bg">
+    <button class="back-btn" *ngIf="currentPage > 1" (click)="goBack()">
+      &lt;
     </button>
-  </div>
 
 
-  <!-- PAGE 2 — CHOOSE MISA / NOT MISA -->
-  <div *ngIf="currentPage === 2" class="page-two">
+    <!-- 🎵 MUSIC TOGGLE — GLOBAL (ALL PAGES) -->
+    <audio #bgMusic [src]="playlist[currentTrackIndex].audio" preload="auto"></audio>
 
-    <!-- TOP: NOT MISA -->
-    <div class="section top-section">
+    <div class="music-toggle open">
+
+      <!-- ⟨ PREV -->
+      <button class="track-btn prev" (click)="playPrevTrack()" aria-label="Previous track">
+        ‹
+      </button>
+
+      <img class="avatar" [src]="playlist[currentTrackIndex].avatar" />
+
+      <div class="track-info">
+        <div class="name">{{ playlist[currentTrackIndex].name }}</div>
+        <div class="song" [title]="playlist[currentTrackIndex].song">
+          🎵 {{ playlist[currentTrackIndex].song }}
+        </div>
+      </div>
+
+      <div class="track-count">
+        {{ currentTrackIndex + 1 }} / {{ playlist.length }}
+      </div>
+
+      <!-- ⟩ NEXT -->
+      <button class="track-btn next" (click)="playNextTrack()" aria-label="Next track">
+        ›
+      </button>
+
+      <input class="volume-slider" type="range" min="0" max="100" [value]="volume" (input)="changeVolume($event)" />
+    </div>
+    <!-- ===================== -->
+    <!-- PAGE 1 — HERO + VIDEO -->
+    <!-- ===================== -->
+    <div *ngIf="currentPage === 1" class="room-wrapper">
+
+      <!-- 🎄 HERO TITLE (PAGE 1 ONLY) -->
+      <section class="room-hero">
+        <div class="snowflakes">
+          <div class="snowflake">❄</div>
+          <div class="snowflake">❅</div>
+          <div class="snowflake">❄</div>
+          <div class="snowflake">❆</div>
+          <div class="snowflake">❄</div>
+          <div class="snowflake">❅</div>
+          <div class="snowflake">❄</div>
+          <div class="snowflake">❆</div>
+          <div class="snowflake">❅</div>
+          <div class="snowflake">❄</div>
+        </div>
+        <h1 class="room-hero-title">
+          🎄 Welcome gang to the MISAMISAVT CHRISTMAS PARTY! 💙
+        </h1>
+        <p class="room-hero-subtitle">
+          Time to have fun and spend time with Misa and Fam!
+        </p>
+      </section>
+
+      <!-- 🎬 VIDEO -->
+      <div class="video-page">
+
+        <!-- Hanging stars (already working) -->
+        <div class="hanging-stars">
+          <span class="star s1">★</span>
+          <span class="star s2">✦</span>
+          <span class="star s3">★</span>
+          <span class="star s4">✦</span>
+          <span class="star s5">★</span>
+          <span class="star s6">✦</span>
+        </div>
+        <div class="snowflakes">
+          <div class="snowflake">★</div>
+          <div class="snowflake">★</div>
+          <div class="snowflake">★</div>
+          <div class="snowflake">★</div>
+          <div class="snowflake">★</div>
+        </div>
+
+        <!-- LEFT SLIDESHOW -->
+        <div class="chibi-column left">
+          <img [src]="leftImages[leftIndex]" class="chibi" [class.slide-out]="isSliding" />
+        </div>
+
+        <!-- VIDEO -->
+        <video #bgVideo autoplay muted loop playsinline webkit-playsinline preload="auto" class="bg-video">
+          <source src="Pictures/MerryChristmas.mp4" type="video/mp4" />
+        </video>
+
+        <!-- RIGHT SLIDESHOW -->
+        <div class="chibi-column right">
+          <img [src]="rightImages[rightIndex]" class="chibi" [class.slide-out]="isSliding" />
+        </div>
+
+        <button class="next-btn-bottom" (click)="goToPage(2)">
+          Next
+        </button>
+      </div>
+
+    </div>
+
+    <!-- PAGE 2 — CHOOSE MISA / NOT MISA -->
+    <div *ngIf="currentPage === 2" class="page-two ">
+
+      <!-- TOP: NOT MISA -->
+      <div class="section top-section">
+        <div class="hanging-stars">
+          <span class="star s1">★</span>
+          <span class="star s2">✦</span>
+          <span class="star s3">★</span>
+          <span class="star s4">✦</span>
+          <span class="star s5">★</span>
+          <span class="star s6">✦</span>
+        </div>
+        <div class="snowflakes">
+          <div class="snowflake">❄</div>
+          <div class="snowflake">❅</div>
+          <div class="snowflake">❄</div>
+          <div class="snowflake">❆</div>
+          <div class="snowflake">❅</div>
+          <div class="snowflake">❄</div>
+          <div class="snowflake">❄</div>
+          <div class="snowflake">❅</div>
+          <div class="snowflake">❄</div>
+          <div class="snowflake">❆</div>
+          <div class="snowflake">❅</div>
+          <div class="snowflake">❄</div>
+        </div>
+
+        <h1 class="choice-title" style="color: cyan; font-family: 'Mountains of Christmas', serif;">Who are you???
+        </h1>
+        <button class="next-btn-section" style="font-family: 'DynaPuff', serif;" (click)="goToPage(3)">
+          If You Are Not Misa!
+        </button>
+      </div>
+
+      <!-- BOTTOM: MISA -->
+      <div class="section bottom-section">
+        <div class="hanging-stars">
+          <span class="star s1">★</span>
+          <span class="star s2">✦</span>
+          <span class="star s3">★</span>
+          <span class="star s4">✦</span>
+          <span class="star s5">★</span>
+          <span class="star s6">✦</span>
+        </div>
+        <div class="snowflakes">
+          <div class="snowflake">❄</div>
+          <div class="snowflake">❅</div>
+          <div class="snowflake">❄</div>
+          <div class="snowflake">❆</div>
+          <div class="snowflake">❅</div>
+        </div>
+
+
+        <button class="next-btn-section" style="font-family: 'DynaPuff', serif;" (click)="goToPage(4)">
+          If You Are Misa!
+        </button>
+      </div>
+
+    </div>
+
+
+    <!-- PAGE 3 — NOT MISA: FIRST CARD -->
+    <div *ngIf="currentPage === 3" class="full-page not-misa-page">
+
+      <div class="final-split">
+        <div class="hanging-stars">
+          <span class="star s1">★</span>
+          <span class="star s2">✦</span>
+          <span class="star s3">★</span>
+          <span class="star s4">✦</span>
+          <span class="star s5">★</span>
+          <span class="star s6">✦</span>
+        </div>
+        <!-- Snowflakes -->
+        <div class="snowflakes">
+          <div class="snowflake">❄</div>
+          <div class="snowflake">❅</div>
+          <div class="snowflake">❄</div>
+          <div class="snowflake">❆</div>
+        </div>
+
+        <div class="final-split-inner">
+
+          <!-- LEFT CARD — Community Message -->
+          <div class="message-card left-card">
+            <h2 class="message-title">Lovely and Beloved Community of Misa! ♥</h2>
+
+            <p class="message-text" style="font-family: 'Cormorant Garamond', serif; line-height: 1.6;">
+              Merry Christmas guys!
+              This message is a general love message to ALL OF YOU!
+              Whether you are mods , vips , viewers, whenever you joined by following misa,
+              You guys are part of this community.
+              And this right here is an appreciation for all you guys supporting misa.
+              You guys are the best and deserve all the happy things you can get!
+              I hope that next year we will all still be friends as we are
+              and have the BEST next year.
+
+              <br><br>
+
+              <b>Mods</b> - Thank you for being there for misa, supporting her, being there on her stream,
+              Helping her with tech off stream , protecting her and most of all streaming is fun
+              and nice but scary at same time.
+              So thank you for being there and being a friend of misa and having her back.
+
+              <br><br>
+
+              <b>VIPS</b> - Thank you guys for your support as you guys are one of the OG viewers
+              who watched misa from start till where she is now.
+
+              <br><br>
+
+              <b>Viewers</b> - Thank you you guys as well for being there for Misa even if you just pop
+              in to say hi, or you chat with her.
+
+              <br><br>
+
+              <b>Streamer friends</b> - Thank you all for being misa's streamer buddies.
+
+              <br><br>
+
+              <b>Merry Christmas and Happy New Year.</b><br>
+              Love and Appreciate all of you guys
+            </p>
+          </div>
+
+          <!-- RIGHT CARD — TOGGLE SURPRISE -->
+          <div class="message-card special-card submission-card" [class.open]="isMisaCardOpen"
+            (click)="toggleMisaCard()">
+
+            <!-- COLLAPSED -->
+            <div class="card-collapsed" *ngIf="!isMisaCardOpen">
+              CLICK HERE FOR SURPRISE! 💙
+            </div>
+
+            <!-- EXPANDED -->
+            <div class="card-expanded" *ngIf="isMisaCardOpen">
+
+              <h2 class="message-title"
+                style="font-family: 'Mountains of Christmas', cursive; text-align: center; margin-bottom: 1rem;">
+                THE MISAMISAVT 💙
+              </h2>
+
+              <p class="message-text" style="
+                font-family: 'Times New Roman', Times, serif;
+                line-height: 1.8;
+                  white-space: pre-line;
+                   text-align: left;
+                  ">
+                Dear Tiramisas,
+                <br><Br>
+
+                Merry Christmas! I wish you the merriest one yet, full of warmth and love. Thank you so much for such a
+                wonderful year and precious precious memories that I will treasure so very much for a long time to come!
+
+                For this Christmas, I have wished that you are able to take some time to be very proud of yourself,
+                whatever you have achieved, whatever you have overcome, no matter how big or small.
+
+                Thank you always for being by my side! May we come to spend much more Christmases together!
+                <br><br>
+                Love,
+                Misa
+              </p>
+
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- NEXT BUTTON (belongs to page 3) -->
+      <div class="center-next-btn">
+        <button class="next-btn-section" (click)="goToPage(5)">
+          Next
+        </button>
+      </div>
+
+    </div>
+
+
+
+
+    <!-- PAGE 4 — MISA: FIRST CARD -->
+    <div *ngIf="currentPage === 4" class="full-page misa-page center-content ">
+      <div class="hanging-stars">
+        <span class="star s1">★</span>
+        <span class="star s2">✦</span>
+        <span class="star s3">★</span>
+        <span class="star s4">✦</span>
+        <span class="star s5">★</span>
+        <span class="star s6">✦</span>
+      </div>
       <div class="snowflakes">
         <div class="snowflake">❄</div>
         <div class="snowflake">❅</div>
         <div class="snowflake">❄</div>
         <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
         <div class="snowflake">❄</div>
       </div>
 
-      <h1 class="choice-title" style="color: cyan; font-family: 'Mountains of Christmas', serif;">Who are you???</h1>
-      <button class="next-btn-section" style="font-family: 'DynaPuff', serif;" (click)="goToPage(3)">
-        If You Are Not Misa!
-      </button>
-    </div>
+      <div class="message-card">
+        <h2 class="message-title">My Oshi — MisaMisaVT 💙</h2>
 
-    <!-- BOTTOM: MISA -->
-    <div class="section bottom-section">
-      <div class="snowflakes">
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❄</div>
+        <p class="message-text" style="font-family: 'DynaPuff', serif;">
+
+          <span class="intro-line">
+            For the Cutest, Prettiest and Bestest MisaMisaVT —
+          </span>
+          <br>
+          <strong>Merry Christmas Misa!</strong>
+
+          <br><br>
+
+          More than a year passed since you started streaming, and I see that from
+          20 followers vtuber MisaMisa123456 streaming WUWA
+          to currently MisaMisaVT with almost 3k followers
+          (or 3K by the time you see this),
+          <strong>I am SUPPPPAAHHH PROUD OF YOU!!</strong>
+
+          <br><br>
+
+          You have been playing WUWA, singing every week for us, doing just chatting,
+          drawing us, going bald, and most importantly
+          you give everyone who comes a warm welcome with a smile
+          to everyone who joins your stream.
+
+          <br><br>
+
+          In my eyes <b>you are one of the best streamers</b>.
+          I loved seeing you grow as you are and you are still growing
+          and most importantly you staying happy and always smiling.
+
+          <br><br>
+
+          I know that you have tough times —
+          no matter how big you grow or how famous you become,
+          at the end you are just a girl doing her best in life.
+
+          <br><br>
+
+          And me, as a MisaMisaVT fan and a friend,
+          I want to and will support you the best I can.
+          No matter how tough life gets, know you have people by your side
+          that will love and support you the best they can.
+
+          <br><br>
+
+          <b>Continue ---</b>
+        </p>
+
       </div>
-
-   
-      <button class="next-btn-section"  style="font-family: 'DynaPuff', serif;" (click)="goToPage(4)">
-        If You Are Misa!
+      <br><br>
+      <button class="next-btn-section" (click)="goToPage(6)">
+        Next
       </button>
     </div>
 
-  </div>
 
+    <!-- PAGE 5 — NOT MISA: SECOND CARD + SUBMISSION COLUMN -->
+    <div *ngIf="currentPage === 5" class="full-page not-misa-page final-split center-content ">
 
-  <!-- PAGE 3 — NOT MISA: FIRST CARD -->
-  <div *ngIf="currentPage === 3" class="full-page not-misa-page ">
-    <div class="final-split">
       <div class="snowflakes">
         <div class="snowflake">❄</div>
         <div class="snowflake">❅</div>
         <div class="snowflake">❄</div>
         <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❄</div>
       </div>
 
       <div class="final-split-inner">
 
-        <!-- LEFT CARD — Your Community Message -->
+        <!-- LEFT: SECOND MESSAGE CARD -->
         <div class="message-card left-card">
-          <h2 class="message-title">Lovely and Beloved Community of Misa! ♥</h2>
-
-          <!-- YOUR formatted message -->
-          <p class="message-text" style="font-family: 'Cormorant Garamond', serif; line-height: 1.6;">
-            Merry Christmas guys!
-            This message is from me to ALL OF YOU!
-            Whether you are mods , VIPs , Viewers, whenever you joined by following misa,
-            You guys are part of this community.
-            And this right here is an appreciation for all you guys supporting misa.
-            You guys are the best and deserve all the happy things you can get!
-            I hope that next year we will all still be friends as we are
-            and have the BEST next year.
-
-            <br><br>
-
-            I want to appreciate and thank everyone one by one:
-
-            <br><br>
-
-            <b>Mods</b> - Thank you for being there for misa, supporting her, being there on her stream,
-            Helping her with tech off stream , protecting her and most of all streaming is fun
-            and nice but scary at same time.
-            So thank you for being there and being a friend of misa and having her back.
-
-            <br><br>
-
-            <b>VIPS</b> - Thank you guys for your support as you guys are one of the OG viewers
-            who watched misa from start till where she is now.
-            You guys have been consistantly supporting misa all this time
-            and being there in most of her stream motivating her to stream as much as she can
-            and Happily as well!
-
-            <br><br>
-
-            <b>Viewers</b> - Thank you you guys as well for being there for Misa even if you just pop
-            in to say hi, or you chat with her , Cheer her when she plays games or singing or
-            just lurking , You guys are the best and one of the reasons misa is soo happy
-            and enjoying streaming. Appreciate you all equally!
-
-            <br><br>
-
-            <b>Streamer friends</b> - Thank you all for being misa's streamer buddies
-            whom she can raid freely and gets loved when she drops in
-            or you guys raid her when she is streaming
-            and exchanging your community with each other.
-            I appreciate you guys and wish you all the best in your streams as well!
-
-            <br><br>
-
-            Thank your reading my yapping gangalang but I will end it with
-            <b>Merry Christmas and Happy New Year.</b>
-            Love and Appreciate all of you guys
-          </p>
-
-
-        </div>
-
-        <!-- RIGHT CARD — Message For Someone Else -->
-        <div class="message-card submission-card">
           <h2 class="message-title" style="font-family: 'Mountains of Christmas', cursive;">
-            Special Message For Someone Else 🎄
+            Some Small Instructions for the BEST Community ♥
           </h2>
 
-          <p class="message-text" style="font-family: 'Cormorant Garamond', serif;">
-            Write your custom personal message here.
-            This can be for one specific friend, supporter,
-            or someone special in the community.
-            (You can fill this later.)
+          <p class="message-text" style="font-family: 'Cormorant Garamond', serif; line-height: 1.7;">
+
+            <strong>Thank you once again</strong> for all your hard work and for doing whatever you can
+            to make this special occasion even more special. 💙
+
+            <br><br>
+
+            On the <b>right side</b>, you will see a card where you can create a submission.
+            Click on it and fill in your name, then choose the type of gift you want to give.
+
+            <br><br>
+
+            You can submit:
+            <br>
+            • A <b>song</b> you made or a nice <b>voice message</b> in audio form (MP3)
+            • A <b>video</b> which can be edit of Misa or a Christmas video (MP4)
+            • A <b>picture</b> of Christmas art, a card, or anything festive (png)
+
+            <br><br>
+
+            If you don’t have any files to upload,
+            simply choose the <b>Message</b> type and write your lovely message instead.
+
+            <br><br>
+
+            <b>Anything you do is appreciated</b>, and you are the BEST for taking part in this. 💙
+
+            <br><br>
+            I do request you all to use a name similar to your <b>Twitch username</b>
+            so I know who you are since I can see who submitted!
+
+          </p>
+        </div>
+
+
+        <!-- RIGHT: SUBMISSION CARD (CREATE + VIEW) -->
+        <div class="message-card submission-card">
+          <h2 class="message-title">
+            Join the Christmas PARTY! 🎁
+          </h2>
+
+          <p class="message-text" style="font-family: 'Cormorant Garamond', serif; line-height: 1.7;">
+
+            Put your lovely <b>gift or message</b> down below 💙
+
+
+            <br><br>
+            Please remember to submit <b>only once</b>.
+            I haven’t put a limit on how many people can submit,
+            but I kindly request that everyone submits just one gift or message.
+
+            <br><br>
+
+            After submitting, a small <b>popup will appear at the top of the page</b>
+            letting you know that your submission was successful.
+
+            <br><br>
+
+            Once that’s done, click the button
+            <b>“Head to Christmas Room”</b>
+            to head over to the Christmas Party Room 🎄
+
+            <br><br>
+
+            I really hope you all enjoy my little surprise for Misa 💙
+
           </p>
 
+          <div class="submission-buttons">
+            <button class="next-btn-section" (click)="openGiftUpload()">
+              Submit Your Gift or Message
+            </button>
+
+            <button class="next-btn-section" routerLink="/room">
+              Head to the Christmas Party Room
+            </button>
+          </div>
         </div>
 
+
       </div>
+
     </div>
-    <div class="center-next-btn">
-      <button class="next-btn-section" (click)="goToPage(5)">
-        Next
-      </button>
-    </div>
-  </div>
 
 
+    <!-- PAGE 6 — MISA: SECOND CARD WITH JUST "VIEW CHRISTMAS ROOM" -->
+    <div *ngIf="currentPage === 6" class="full-page misa-page center-content">
 
-  <!-- PAGE 4 — MISA: FIRST CARD -->
-  <div *ngIf="currentPage === 4" class="full-page misa-page center-content">
-    <div class="snowflakes">
-      <div class="snowflake">❄</div>
-      <div class="snowflake">❅</div>
-      <div class="snowflake">❄</div>
-      <div class="snowflake">❆</div>
-      <div class="snowflake">❄</div>
+      <!-- Decorations -->
+      <div class="hanging-stars">
+        <span class="star s1">★</span>
+        <span class="star s2">✦</span>
+        <span class="star s3">★</span>
+        <span class="star s4">✦</span>
+        <span class="star s5">★</span>
+        <span class="star s6">✦</span>
+      </div>
+
+      <div class="snowflakes">
+        <div class="snowflake">❄</div>
         <div class="snowflake">❅</div>
         <div class="snowflake">❄</div>
         <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❄</div>
+        <div class="snowflake">❆</div>
+      </div>
+
+
+
+      <!-- ⭐ CANVAS REVEAL CARD -->
+      <div class="message-card final-canvas-card" [class.open]="isMisaCardOpen" (click)="toggleMisaCard()">
+
+        <!-- COLLAPSED -->
+        <div class="card-collapsed" *ngIf="!isMisaCardOpen">
+          A Gift We all made together with Power of FRIENDSHIP.
+          <br><br>
+          This is what all children came together and made for their mother (Misa) Hope you like it
+          <br><br>
+          Credits - QIUFENG 💙
+        </div>
+
+        <!-- EXPANDED (CANVAS ONLY) -->
+        <div class="card-expanded" *ngIf="isMisaCardOpen">
+
+          <img src="Pictures/Christmas-Canvas.png" alt="Community Canvas" class="canvas-image" />
+
+        </div>
+
+      </div>
+
+      <!-- FOOTER ACTION -->
+      <button class="next-btn-section" (click)="goToPage(7)">
+        Continue
+      </button>
+
     </div>
 
-  <div class="message-card">
-  <h2 class="message-title">My Oshi — MisaMisaVT 💙</h2>
 
-  <p class="message-text" style="font-family: 'DynaPuff', serif;">
-
-    <span class="intro-line">
-      For the Cutest, Prettiest and Bestest MisaMisaVT —
-    </span>
-    <br>
-    <strong>Merry Christmas Misa!</strong>
-
-    <br><br>
-
-    More than a year passed since you started streaming, and I see that from  
-    20 followers vtuber MisaMisa123456streaming WUWA  
-    to currently MisaMisaVT with almost 3k followers 
-    (or 3K by the time you see this),  
-    <strong>I am SUPPPPAAHHH PROUD OF YOU!!</strong>
-
-    <br><br>
-
-    You have been playing WUWA, singing every week for us, doing just chatting,  
-    drawing us, going bald, and most importantly  
-    you give everyone who comes a warm welcome with a smile  
-    to everyone who joins your stream.
-
-    <br><br>
-
-    In my eyes <b>you are one of the best streamers</b>.  
-    I loved seeing you grow as you are still growing  
-    and most importantly you staying happy and always smiling.
-
-    <br><br>
-
-    I know that you have tough times —  
-    no matter how big you grow or how famous you become,  
-    at the end you are just a girl doing her best in life.
-
-    <br><br>
-
-    And me, as a MisaMisaVT fan and a friend,  
-    I want to and will support you the best I can.  
-    No matter how tough life gets, know you have people by your side  
-    that will love and support you the best they can.
-
-    <br><br>
-
-    <b>Continue ---</b>
-  </p>
-
-  <button class="next-btn-section" (click)="goToPage(6)">
-    Next
-  </button>
+  </div>
 </div>
 
+<!-- PAGE 7 — WAITING ROOM -->
+<div *ngIf="currentPage === 7" class="full-page misa-page center-content">
+
+  <!-- Decorations -->
+  <div class="hanging-stars">
+    <span class="star s1">★</span>
+    <span class="star s2">✦</span>
+    <span class="star s3">★</span>
+    <span class="star s4">✦</span>
+    <span class="star s5">★</span>
+    <span class="star s6">✦</span>
   </div>
 
+  <div class="snowflakes">
+    <div class="snowflake">❄</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❄</div>
+    <div class="snowflake">❆</div>
+  </div>
 
-  <!-- PAGE 5 — NOT MISA: SECOND CARD + SUBMISSION COLUMN -->
-  <div *ngIf="currentPage === 5" class="full-page not-misa-page final-split">
+  <div class="final-split">
+    <div class="final-split-inner waiting-split">
 
-    <div class="snowflakes">
-      <div class="snowflake">❄</div>
-      <div class="snowflake">❅</div>
-      <div class="snowflake">❄</div>
-      <div class="snowflake">❆</div>
-      <div class="snowflake">❄</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❄</div>
-    </div>
+      <!-- LEFT — SLIDESHOW -->
+      <div class="chibi-column waiting-left">
 
-    <div class="final-split-inner">
+        <div class="gif-card">
 
-      <!-- LEFT: SECOND MESSAGE CARD -->
-      <div class="message-card left-card">
-        <h2 class="message-title" style="font-family: 'Mountains of Christmas', cursive;">Another Message For You ♥</h2>
-        <p class="message-text" style="font-family: 'Cormorant Garamond', serif;">
-          Second layer of text for non-Misa people —
-          more jokes, love, or instructions for the event 🎄
-        </p>
-      </div>
+          <div class="gif-card-header">
+            AI Slop by <span class="credit-name">MadView</span> 💔
+          </div>
 
-      <!-- RIGHT: SUBMISSION CARD (CREATE + VIEW) -->
-      <div class="message-card submission-card">
-        <h2 class="message-title">Join The Christmas Gift Wall 🎁</h2>
-        <p class="message-text" >
-          Create a gift for Misa or everyone,
-          and then visit the Christmas Room to see all gifts.
-        </p>
+          <img src="Pictures/Misa_Dance.gif" class="gif-image" alt="Waiting room animation by MadView" />
 
-        <div class="submission-buttons">
-          <button class="next-btn-section" (click)="openGiftUpload()">
-            Create a Gift
-          </button>
-
-          <button class="next-btn-section" routerLink="/room">
-            View Christmas Room
-          </button>
         </div>
+
+      </div>
+
+      <!-- RIGHT — MESSAGE CARD -->
+      <div class="message-card waiting-card">
+
+        <h2 class="message-title">
+          Waiting Room baws 💙
+        </h2>
+
+        <p class="message-text" style="
+                font-family: 'Times New Roman', Times, serif;
+                line-height: 1.8;
+                  white-space: pre-line;
+                   text-align: left;
+                  ">
+          This room is to wait
+          <br><br>
+          What do you think of the gift so far? Share your thoughts
+          <br><br>
+          If the songs on top right are not finished I guess you have to wait till they finish OWO
+          <br><br>
+          You can just enjoy the songs and take a break. I will answer your questions if you have any
+          <br>
+          When you’re ready, the Christmas Room will be waiting. (wait till songs are done everyone gave their best)
+        </p>
+
+        <button class="next-btn-section" routerLink="/room">
+          Enter the Christmas Room 🎄
+        </button>
+
       </div>
 
     </div>
-
   </div>
 
+</div>
 
-  <!-- PAGE 6 — MISA: SECOND CARD WITH JUST "VIEW CHRISTMAS ROOM" -->
-  <div *ngIf="currentPage === 6" class="full-page misa-page center-content">
-    <div class="snowflakes">
-      <div class="snowflake">❄</div>
-      <div class="snowflake">❅</div>
-      <div class="snowflake">❄</div>
-      <div class="snowflake">❆</div>
-      <div class="snowflake">❄</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❄</div>
-        <div class="snowflake">❆</div>
-        <div class="snowflake">❅</div>
-        <div class="snowflake">❄</div>
-    </div>
+<!-- ===================== -->
+<!--      JADE PAGE        -->
+<!-- ===================== -->
+<div *ngIf="pageFor === 'Amber'" class="jade-wrapper">
 
-    <div class="message-card">
-      <h2 class="message-title">Final Message For Misa 💙</h2>
-      <p class="message-text" style="font-family: 'Cormorant Garamond', serif;">
-        Your second, extra-special message for Misa goes here —
-        the really emotional / sweet / chaotic part only she sees 💙
-      </p>
-
-      <button class="next-btn-section" routerLink="/room">
-        View Christmas Room
-      </button>
-    </div>
-  </div>
+  <app-birthday></app-birthday>
 
 </div>

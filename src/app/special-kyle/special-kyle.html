@@ -1,0 +1,130 @@
+<div class="xmas-bg">
+
+    <!-- 🎵 MUSIC TOGGLE — GLOBAL (ALL PAGES) -->
+    <audio #bgMusic src="Pictures/Kyle_rizzmass.wav" preload="auto" loop></audio>
+    <div class="music-toggle" [class.open]="volumeOpen" (click)="toggleVolume($event)">
+      <span class="music-icon">🎵</span>
+
+      <div class="volume-panel" *ngIf="volumeOpen">
+        <input type="range" min="0" max="100" [value]="volume" (input)="changeVolume($event)" />
+        <span class="volume-text">{{ volume }}%</span>
+      </div>
+    </div>
+
+    <!-- ===================== -->
+    <!-- PAGE 1 — HERO + VIDEO -->
+    <!-- ===================== -->
+    <div class="room-wrapper">
+
+      <!-- 🎄 HERO TITLE (PAGE 1 ONLY) -->
+      <section class="room-hero">
+        <div class="snowflakes">
+          <div class="snowflake">❄</div>
+          <div class="snowflake">❅</div>
+          <div class="snowflake">❄</div>
+          <div class="snowflake">❆</div>
+          <div class="snowflake">❄</div>
+        </div>
+        <h1 class="room-hero-title">
+          🥀 Something Special from Our Beloved Kyle 💙
+        </h1>
+        <p class="room-hero-subtitle">
+          Enjoy Kyle's Singing Gang!
+        </p>
+      </section>
+
+      <!-- 🎬 VIDEO -->
+      <div class="video-page">
+<!-- LEFT SIDE LIGHTS -->
+<div class="light-orb orb-left"></div>
+<div class="light-orb orb-left-top"></div>
+<div class="light-orb orb-left-bottom"></div>
+
+<!-- RIGHT SIDE (optional, fewer than left for asymmetry) -->
+<div class="light-orb orb-right"></div>
+        <!-- Hanging stars (already working) -->
+        <div class="hanging-stars">
+          <span class="star s1">★</span>
+          <span class="star s2">✦</span>
+          <span class="star s3">★</span>
+          <span class="star s4">✦</span>
+          <span class="star s5">★</span>
+          <span class="star s6">✦</span>
+        </div>
+        <div class="snowflakes">
+  <div class="snowflake">💙</div>
+  <div class="snowflake">💙</div>
+  <div class="snowflake">💙</div>
+  <div class="snowflake">💙</div>
+  <div class="snowflake">💙</div>
+</div>
+        <!-- LEFT SLIDESHOW -->
+    
+
+  <!-- LEFT GIF -->
+  <div class="chibi-column left">
+    <div class="chibi-spin">
+    <img src="Pictures/Kinsely_Tree.gif" alt="Left GIF" class="chibi" />
+    </div>
+  </div>
+
+  <!-- CENTER SLIDESHOW -->
+  <div class="center-media">
+    <img
+      [src]="centerImages[centerIndex]"
+      class="center-slide"
+      [class.slide-out]="isSliding"
+    />
+  </div>
+
+  <!-- RIGHT GIF -->
+  <div class="chibi-column right">
+     <div class="chibi-spin">
+    <img src="Pictures/Kinsely_Tree.gif" alt="Left GIF" class="chibi" />
+    </div>
+  </div>
+
+</div>
+
+<!-- NEXT BUTTON -->
+<button class="next-btn-bottom" (click)="openQuiz()">
+  Next
+</button>
+
+<!-- QUIZ POPUP -->
+<div class="quiz-overlay" *ngIf="showQuiz">
+  <div class="quiz-box">
+
+    <h2>Before You Enter 💙</h2>
+
+    <input
+      type="text"
+      placeholder="How tall is misa?"
+      [(ngModel)]="answerHeight"
+    />
+
+    <input
+      type="text"
+      placeholder="How old is misa?"
+      [(ngModel)]="answerAge"
+    />
+
+    <input
+      type="text"
+      placeholder="Who's Your wuwa wife?"
+      [(ngModel)]="answerWuwa"
+    />
+
+    <p class="error" *ngIf="errorText">{{ errorText }}</p>
+
+    <div class="quiz-actions">
+      <button (click)="submitQuiz()">Enter</button>
+      <button class="cancel" (click)="closeQuiz()">Cancel</button>
+    </div>
+
+  </div>
+</div>
+
+
+
+    </div>

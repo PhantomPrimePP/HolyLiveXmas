@@ -37,3 +37,9 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.gift-viewer-dialog .mat-mdc-dialog-container {
+  padding: 0 !important;
+  border-radius: 24px;
+  overflow: hidden;
+  background: transparent;
+}

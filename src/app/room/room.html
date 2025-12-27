@@ -1,32 +1,118 @@
 <div class="room-wrapper">
+  <audio #bgMusic [src]="bgPlaylist[currentBgIndex].src" preload="auto">
+  </audio>
+  <div class="music-toggle" [class.open]="volumeOpen" (click)="toggleVolume($event)">
+    <span class="music-icon">
+      🎵
+    </span>
 
-  <!-- TOP 50%: room artwork background (cover) -->
-  <div class="room-top"></div>
+    <div class="volume-panel" *ngIf="volumeOpen">
+      <input type="range" min="0" max="100" [value]="volume" (input)="changeVolume($event)" />
+      <span class="volume-text">{{ volume }}%</span>
+    </div>
+  </div>
+  <!-- ===================== -->
+  <!-- HERO HEADER SECTION -->
+  <!-- ===================== -->
+  <section class="room-hero">
+    <h1 class="room-hero-title">🎄 Merry Christmas, Everyone 💙</h1>
+    <p class="room-hero-subtitle">
+      A Lovely Day and Time to spend all of us together!
+    </p>
+  </section>
 
-  <!-- BOTTOM 50%: crimson floor + gift layer -->
-  <div class="room-bottom">
-    <div class="confetti-container"></div>
-    <div class="gifts-layer">
-      <div class="refresh-container">
-  <button class="refresh-btn" (click)="refreshGifts()">
-    🔄 Refresh Gifts
-  </button>
-</div>
-      <div
-        class="gift-box"
-        *ngFor="let gift of gifts; let i = index"
-        [style.left.%]="giftPositions[i]?.x"
-        [style.top.%]="giftPositions[i]?.y"
-        (click)="openGift(gift)"
-        title="{{ gift.Name || gift.name }}"
-      >
-        <img [src]="getBoxImageSrc(gift)" class="gift-icon" alt="gift box">
+  <!-- ===================== -->
+  <!-- ROOM ART IMAGE -->
+  <!-- ===================== -->
+  <div class="room-top-wrapper">
+<div class="hanging-stars">
+          <span class="star s1">★</span>
+          <span class="star s2">✦</span>
+          <span class="star s3">★</span>
+          <span class="star s4">✦</span>
+          <span class="star s5">★</span>
+          <span class="star s6">✦</span>
+        </div>
+    <!-- LEFT CHIBI COLUMN -->
+    <div class="chibi-column left">
+      <div class="snow-layer">
+        <span class="snow">❄</span>
+        <span class="snow">❅</span>
+        <span class="snow">❆</span>
       </div>
 
-      <!-- If no gifts, show small hint -->
+      <img src="Pictures/Loi_Tree.gif" class="chibi">
+      <img src="Pictures/Holy_Tree.gif" class="chibi">
+      <img src="Pictures/Misa_Tree.gif" class="chibi">
+      <img src="Pictures/Kinsely_Tree.gif" class="chibi">
+      <img src="Pictures/Tay_Tree.gif" class="chibi">
+      <img src="Pictures/ButtJuice_Tree.gif" class="chibi">
+    </div>
+
+    <!-- MAIN IMAGE -->
+    <div class="room-top">
+      <img src="Pictures/Misa-Xmas.png" class="room-image">
+    </div>
+
+    <!-- RIGHT CHIBI COLUMN -->
+    <div class="chibi-column right">
+      <div class="snow-layer">
+        <span class="snow">❄</span>
+        <span class="snow">❅</span>
+        <span class="snow">❆</span>
+      </div>
+
+      <img src="Pictures/Shuya_Tree.gif" class="chibi">
+      <img src="Pictures/Psycho_Tree.gif" class="chibi">
+      <img src="Pictures/Shamimi_Tree.gif" class="chibi">
+      <img src="Pictures/Crit_Tree.gif" class="chibi">
+      <img src="Pictures/Autumn_Tree.gif" class="chibi">
+    </div>
+
+  </div>
+
+
+  <!-- ===================== -->
+  <!-- GIFT SECTION -->
+  <!-- ===================== -->
+  <div class="room-bottom">
+<div class="hanging-stars">
+          <span class="star s1">★</span>
+          <span class="star s2">✦</span>
+          <span class="star s3">★</span>
+          <span class="star s4">✦</span>
+          <span class="star s5">★</span>
+          <span class="star s6">✦</span>
+        </div>
+    <!-- Gift Section Title -->
+    <div class="gift-section-header">
+      <h2 class="gift-section-title">🎁 Gifts From Your Community</h2>
+      <p class="gift-section-subtitle">
+        Each one made with love, just for you
+      </p>
+    </div>
+
+    <div class="gifts-layer">
+
+      <!-- Refresh Button -->
+      <div class="refresh-container">
+        <button class="refresh-btn" (click)="refreshGifts()" title="Refresh Gifts">
+          🔄
+        </button>
+      </div>
+
+      <!-- Gifts -->
+      <div class="gift-box" *ngFor="let gift of gifts; let i = index" [style.left.%]="giftPositions[i]?.x"
+        [style.top.%]="giftPositions[i]?.y" (click)="openGift(gift, i, $event)" title="{{ gift.Name || gift.name }}">
+        <img [src]="getBoxImageSrc(gift)" class="gift-icon" alt="Gift box" />
+      </div>
+
+      <!-- Empty State -->
       <div *ngIf="gifts.length === 0" class="no-gifts-hint">
         No gifts yet — upload one from Create a Gift!
       </div>
+
     </div>
   </div>
+
 </div>

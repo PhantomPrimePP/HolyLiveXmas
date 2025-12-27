@@ -1,0 +1,80 @@
+<div class="room-wrapper">
+  <!-- ===================== -->
+  <!-- HERO HEADER SECTION -->
+  <!-- ===================== -->
+  <section class="room-hero">
+    <h1 class="room-hero-title">🎄 The Finale  💙</h1>
+    <p class="room-hero-subtitle">
+      A small token of Apperciation from me to all!
+    </p>
+  </section>
+
+  <!-- ===================== -->
+  <!-- ROOM ART IMAGE -->
+  <!-- ===================== -->
+  <div class="room-top-wrapper">
+        <div class="hanging-stars">
+          <span class="star s1">★</span>
+          <span class="star s2">✦</span>
+          <span class="star s3">★</span>
+          <span class="star s4">✦</span>
+          <span class="star s5">★</span>
+          <span class="star s6">✦</span>
+        </div>
+        <!-- Snowflakes -->
+        <div class="snowflakes">
+          <div class="snowflake">❄</div>
+          <div class="snowflake">❅</div>
+          <div class="snowflake">❄</div>
+          <div class="snowflake">❆</div>
+        </div>
+ 
+       <div class="message-card special-card submission-card" [class.open]="isMisaCardOpen"
+            (click)="toggleMisaCard()">
+
+            <!-- COLLAPSED -->
+            <div class="card-collapsed" *ngIf="!isMisaCardOpen">
+              THE END! 💙
+            </div>
+
+            <!-- EXPANDED -->
+            <div class="card-expanded" *ngIf="isMisaCardOpen">
+
+              <h2 class="message-title"
+                style="font-family: 'Mountains of Christmas', cursive; text-align: center; margin-bottom: 1rem;">
+                Thank you Everyone! 💙
+              </h2>
+
+              <p class="message-text" style="
+                font-family: 'Times New Roman', Times, serif;
+                line-height: 1.8;
+                  white-space: pre-line;
+                   text-align: left;
+                  ">
+                Final Message,
+                <br><Br>
+
+               This is card is specially to Thank you all who participated and gave misa their gifts, Trusted me with making this page and helping out in what we did with this surprise for misa! I appreciate and love you all for making this as best as possible
+                    <br><br>
+               I also want to thank Misa, Our wonderful, Awesome , Cute and THE BEST streamer for accepting this gift from all of us! You may think you are not special and just a girl but in some way you have changed our lives in better way for all of us by being a part of our lives. Bless you Misa and Hope you achieve all your dreams and be happy!
+
+    
+                <br><br>
+                 From ,
+                PhantomPrimePP
+              </p>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+
+   
+
+  </div>
+
+ 

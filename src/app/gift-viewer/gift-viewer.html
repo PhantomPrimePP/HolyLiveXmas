@@ -1,33 +1,50 @@
 <h2 class="title">{{ data.name }}</h2>
 
+
+
+
 <div class="viewer-wrapper" [style.transform]="'scale(' + dialogSize + ')'">
 
-<div class="media-container">
+  <div class="media-container">
 
-  <!-- IMAGE -->
-  <img *ngIf="isImage()" [src]="data.url" class="media-image" />
+    <!-- IMAGE -->
+    <div *ngIf="isImage()" class="image-backdrop">
+  <img [src]="data.url" class="media-image" />
+</div>
 
-  <!-- AUDIO -->
-  <audio *ngIf="isAudio()" controls class="media-audio">
-    <source [src]="data.url" type="audio/mpeg" />
-  </audio>
+    <!-- AUDIO -->
+    <audio *ngIf="isAudio()" controls class="media-audio">
+      <source [src]="data.url" type="audio/mpeg" />
+    </audio>
 
-  <!-- VIDEO -->
-  <video *ngIf="isVideo()" controls class="media-video">
-    <source [src]="data.url" type="video/mp4" />
-  </video>
+    <!-- VIDEO -->
+    <video *ngIf="isVideo()" controls class="media-video">
+      <source [src]="data.url" type="video/mp4" />
+    </video>
 
-  <!-- MESSAGE -->
-  <div  *ngIf="isMessage()" class="message-card">
-    <p>{{ data.message }}</p>
+    <!-- MESSAGE -->
+    <div *ngIf="isMessage()" class="message-card">
+      <p class="message-text">{{ data.message }}</p>
+    </div>
+
+
+    <div *ngIf="isYouTube()" class="youtube-wrapper">
+  <iframe
+    [src]="safeYoutubeUrl"
+    width="100%"
+    height="360"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+
   </div>
 
-</div>
-
-<div class="btn-area">
-  <button mat-button color="primary" (click)="dialogRef.close()">
-    Close
-  </button>
-</div>
+  <div class="btn-area">
+    <button mat-button class="xmas-btn" (click)="dialogRef.close()">
+      Close
+    </button>
+  </div>
 
 </div>

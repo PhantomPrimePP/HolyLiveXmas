@@ -1,54 +1,86 @@
-<h2 mat-dialog-title>Present your gift for MisaMisaVT! 🎁</h2>
 
-<mat-dialog-content>
+<div *ngIf="!submissionsOpen" class="submission-closed">
+  <h2 class="christmas-title">🎄 Submissions Closed</h2>
+
+  <p class="closed-text">
+    This page is no longer accepting submissions.<br><br>
+    It is now a page to keep with us as memories and a page misa can anytime come to visit so can you guys
+    I deepely appreciate you all. Thank you very much to make this event THE BEST! 💙
+  </p>
+</div>
+
+<div *ngIf="submissionsOpen">
+<h2 mat-dialog-title class="christmas-title">
+  Present your gift for MisaMisaVT! 🎁
+</h2>
+
+<mat-dialog-content class="christmas-content">
 
   <!-- Name -->
-  <mat-form-field appearance="fill" class="full">
+  <mat-form-field appearance="fill" class="full xmas-field">
     <mat-label>Your Name</mat-label>
     <input matInput [(ngModel)]="giftData.name">
   </mat-form-field>
 
-  <br>
+  <!-- Gift type -->
+  <div class="xmas-section-label">Gift Type</div>
 
-  <!-- Gift Type Selection -->
-  <mat-label>Gift Type</mat-label>
-  <mat-select [(ngModel)]="giftData.type">
-    <mat-option value="file">Upload File</mat-option>
-    <mat-option value="message">Write Message</mat-option>
-  </mat-select>
+ <mat-select class="xmas-select" [(ngModel)]="giftData.type">
+  <mat-option value="file">Upload File</mat-option>
+  <mat-option value="youtube">YouTube Link</mat-option>
+  <mat-option value="message">Write Message</mat-option>
+</mat-select>
 
-  <br><br>
-
-  <!-- FILE Upload Section -->
-  <div *ngIf="giftData.type === 'file'">
+  <!-- File upload -->
+  <div *ngIf="giftData.type === 'file'" class="xmas-upload-area">
     <label>Upload File (PNG / MP4 / MP3):</label>
-    <input type="file" (change)="onFileSelected($event)" accept=".png,.jpg,.jpeg,.mp4,.mp3,.wav">
+    <input class="xmas-file-input"
+           type="file"
+           (change)="onFileSelected($event)"
+           accept=".png,.jpg,.jpeg,.mp4,.mp3,.wav">
   </div>
 
-  <!-- MESSAGE Section -->
+  <!-- Message input -->
   <div *ngIf="giftData.type === 'message'">
-    <mat-form-field appearance="fill" class="full">
+    <mat-form-field appearance="fill" class="full xmas-field">
       <mat-label>Your Message</mat-label>
       <textarea matInput rows="4" [(ngModel)]="giftData.message"></textarea>
     </mat-form-field>
   </div>
 
-  <br>
-
-  <!-- Gift Box -->
-  <mat-form-field appearance="fill" class="full">
+  <!-- Gift box -->
+  <mat-form-field appearance="fill" class="full xmas-field">
     <mat-label>Select Gift Box</mat-label>
     <mat-select [(value)]="giftData.boxImage">
       <mat-option *ngFor="let box of giftBoxes" [value]="box.image">
-        <img [src]="box.image" width="30" height="30" style="margin-right:10px;">
+        <img [src]="box.image" width="30" height="30" class="box-icon">
         {{ box.name }}
       </mat-option>
     </mat-select>
   </mat-form-field>
+  <!-- YouTube link input -->
+<div *ngIf="giftData.type === 'youtube'">
+  <mat-form-field appearance="fill" class="full xmas-field">
+    <mat-label>YouTube Video Link</mat-label>
+    <input matInput
+           placeholder="https://www.youtube.com/watch?v=XXXX"
+           [(ngModel)]="giftData.youtubeUrl">
+  </mat-form-field>
+</div>
+
 
 </mat-dialog-content>
 
-<mat-dialog-actions>
-  <button mat-button (click)="submit()">Submit</button>
-  <button mat-button mat-dialog-close>Cancel</button>
+<mat-dialog-actions class="christmas-actions">
+  <button mat-button class="xmas-btn" (click)="submit()">Submit</button>
+  <button mat-button class="xmas-btn cancel" mat-dialog-close>Cancel</button>
 </mat-dialog-actions>
+
+<!-- Optional floating snowflakes INSIDE dialog -->
+<div class="dialog-snowflakes">
+  <div class="flake">❄</div>
+  <div class="flake">❅</div>
+  <div class="flake">❆</div>
+  <div class="flake">❄</div>
+</div>
+</div>

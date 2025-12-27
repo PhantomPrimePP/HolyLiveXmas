@@ -1,0 +1,390 @@
+.page1-orange {
+  width: 100vw;
+  height: 100vh;
+  background: orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.birthday-title {
+  position: absolute;
+  top: 30px;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+/* Smaller picture */
+.amber-picture {
+  width: 120px !important;
+  height: auto;
+  cursor: pointer;
+  transition: left 0.3s ease, top 0.3s ease; /* smooth movement */
+}
+.quiz-card {
+  text-align: left;
+}
+
+.question-text {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: 600;
+}
+
+.quiz-option {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #f1f1f1;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.quiz-option:hover {
+  background: #ddd;
+  transform: scale(1.02);
+}
+
+/* Correct Answer */
+.correct {
+  background: #28a745 !important;  /* green */
+  color: white !important;
+}
+
+/* Wrong Answer */
+.wrong {
+  background: #dc3545 !important;  /* red */
+  color: white !important;
+}
+.final-split {
+  padding: 40px 20px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;  /* stack snow + cards vertically */
+  align-items: center;     /* center horizontally */
+  justify-content: flex-start;
+}
+
+.final-split-inner {
+  display: flex;             /* Allow two columns */
+  flex-direction: row;       /* Side-by-side */
+  gap: 30px;                 /* Space between cards */
+  width: 90%;
+  max-width: 1100px;
+  justify-content: center;
+}
+
+.left-card, .submission-card {
+  flex: 1;                   /* Make both sides equal width */
+}
+
+.center-next-btn {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.message-card {
+  background: white;
+  padding: 30px 30px;
+  border-radius: 16px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  text-align: center;
+  z-index: 10;
+  max-height: 70vh;       /* card never grows past 70% of screen */
+  overflow-y: auto;
+ //  padding-right: 12px; 
+}
+.message-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+.message-card::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.25);
+  border-radius: 10px;
+}
+
+.message-card::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.4);
+}
+
+.full-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;     /* stack children vertically */
+  justify-content: flex-start; /* start content at top */
+  align-items: center;         /* keep layout centered horizontally */
+}
+
+/* Background colors */
+.not-misa-page {
+  background: #7a0f1a; /* deep crimson */
+}
+.next-btn-section {
+  padding: 14px 28px;
+  background: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.next-btn-section:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+/* Suspense Page Background */
+/* Friendly Suspense Page */
+.friendly-suspense {
+  background: linear-gradient(180deg, #b7e1ff, #7cc6cf);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Floating fun emojis */
+.floating-fun {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.fun {
+  position: absolute;
+  font-size: 2rem;
+  animation: floatUp 6s infinite ease-in-out;
+  opacity: 0.75;
+}
+
+.fun:nth-child(1) { left: 10%; animation-delay: 0s; }
+.fun:nth-child(2) { left: 40%; animation-delay: 1s; }
+.fun:nth-child(3) { left: 70%; animation-delay: 2s; }
+.fun:nth-child(4) { left: 90%; animation-delay: 1.5s; }
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh) scale(1); opacity: 0; }
+  25% { opacity: 1; }
+  100% { transform: translateY(-10vh) scale(1.15); opacity: 0; }
+}
+
+.friendly-card {
+  max-width: 600px;
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.93);
+  color: black;
+}
+
+.friendly-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.friendly-btn {
+  font-size: 1.1rem !important;
+  font-weight: 600;
+}
+
+.birthday-surprise {
+  background: #ffd6e8; /* light pink */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.surprise-card {
+  background: #ffe761;
+  border-radius: 20px;
+  display: flex;
+  padding: 30px;
+  width: 90%;
+  max-width: 1200px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  gap: 40px; /* 👈 adds space between columns */
+}
+
+/* LEFT / RIGHT slideshow columns */
+.side-images {
+  width: 30%;          /* 👈 ensures stable width */
+  max-width: 280px;    /* 👈 prevents too large images */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;  
+  transition: opacity 1s ease-in-out;
+}
+
+/* Center text area */
+.center-message {
+  width: 40%;
+  max-width: 350px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px; /* spacing between title and message */
+}
+
+.hb-text {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #d0005a;
+  margin-bottom: 15px;
+  line-height: 1.2; /* 👈 prevents overlapping */
+}
+
+.hb-sub {
+  font-size: 1.2rem;
+  color: #5a0034;
+  line-height: 1.4;
+}
+
+.final-page-bg {
+  background: #ffd6e8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+
+.final-title {
+  font-size: 2.8rem;
+  color: #d0005a;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.final-subtitle {
+  font-size: 1.2rem;
+  color: #5a0034;
+  margin-bottom: 30px;
+}
+
+/* GRID */
+.message-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* CARD */
+.friend-card {
+  background: #fff9c4;
+  border: 2px solid #ffce00;
+  border-radius: 18px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  overflow: hidden;
+  height: 130px; /* closed height */
+}
+
+.friend-card.open {
+  height: 380px; /* expanded height */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* CLOSED STATE TEXT */
+.card-collapsed {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #cc0066;
+  font-weight: 700;
+}
+
+/* OPEN STATE */
+.card-expanded {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.friend-name {
+  font-size: 1.4rem;
+  color: #c8005d;
+  font-weight: 800;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.friend-text {
+  font-size: 1rem;
+  line-height: 1.45;
+  color: #5a0034;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* scrollbar */
+.friend-text::-webkit-scrollbar {
+  width: 6px;
+}
+
+.friend-text::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.25);
+  border-radius: 8px;
+}
+/* SPECIAL STYLING FOR KADE'S CARD */
+.special-card {
+  background: #ffe0f0; /* soft romantic pink */
+  border: 2px solid #ff69b4; /* hot pink border */
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Special subtle heart pattern */
+.special-card::before {
+  content: "❤️";
+  font-size: 5rem;
+  color: rgba(255, 105, 180, 0.15);
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  transform: rotate(-15deg);
+}
+
+/* Pulse animation to highlight the special card */
+.special-card:not(.open) {
+  animation: softPulse 2.2s infinite ease-in-out;
+}
+
+@keyframes softPulse {
+  0% { transform: scale(1); box-shadow: 0 0 12px rgba(255, 105, 180, 0.3); }
+  50% { transform: scale(1.03); box-shadow: 0 0 20px rgba(255, 105, 180, 0.5); }
+  100% { transform: scale(1); box-shadow: 0 0 12px rgba(255, 105, 180, 0.3); }
+}

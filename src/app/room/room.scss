@@ -1,25 +1,119 @@
+.room-hero {
+  width: 100%;
+  padding: 60px 20px 50px;
+  text-align: center;
+
+  background: linear-gradient(
+    180deg,
+    #2a0a0d 0%,
+    #7a0f1a 100%
+  );
+
+  border-bottom: 3px solid rgba(255, 215, 35, 0.4);
+}
+
+.room-hero-title {
+  font-family: 'Mountains of Christmas', cursive;
+  font-size: 48px;
+  font-weight: 900;
+  color: #ffd523;
+  margin-bottom: 12px;
+
+  text-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+.room-hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+
 /* Full-page wrapper split 50/50 */
 .room-wrapper {
   width: 100%;
-  display: block; /* natural vertical stacking */
+  min-height: 100vh;   /* allow page to grow */
+  display: block;
+  overflow-x: hidden; /* prevent sideways zoom jitter */
 }
+.room-top-wrapper {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+
+  gap: 36px; /* more breathing room */
+
+  width: 100%;
+  padding: 32px 24px;
+
+  background: radial-gradient(
+    ellipse at center,
+  #0F2A1D
+
+
+
+  );
+}
+
+.chibi-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; /* 🔥 THIS */
+  align-items: center;
+ position: relative;
+  height: 100%;
+  min-height: 80vh;
+
+  width: 180px; /* a bit wider */
+  padding: 20px 0;
+}
+
+
+.chibi-column.left {
+  align-items: flex-end;
+}
+
+.chibi-column.right {
+  align-items: flex-start;
+}
+.chibi {
+  width: 150px;          /* BIGGER */
+  max-width: 100%;
+  height: auto;
+
+  pointer-events: none;
+  user-select: none;
+z-index: 2;
+  /* Depth & polish */
+  filter:
+    drop-shadow(0 10px 18px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 0 12px rgba(255, 215, 100, 0.25));
+
+  opacity: 0.98;
+}
+
 
 /* Top: background room artwork */
 .room-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 1400px;
   width: 100%;
-  background-image: url('/Pictures/Misa-Xmas.png');
-  background-size: contain;       /* show full image */
-  background-repeat: no-repeat;
-  background-position: top center;
 
-  /* Let the div resize based on the natural image ratio */
-  aspect-ratio: 1917 / 1073;
-
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border: 8px solid black;
+  background: #7B1E22
 }
+.room-image {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
 
+}
 
 /* Bottom: crimson floor area */
 .room-bottom {
@@ -32,7 +126,15 @@
 
 
 
+@keyframes chibi-float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
 
+.chibi {
+  animation: chibi-float 4s ease-in-out infinite;
+}
 /* Layer that holds gifts (positioned in bottom area) */
 .gifts-layer {
   width: 100%;
@@ -107,28 +209,205 @@
   transform: scale(1.05);
   box-shadow: 0 3px 12px rgba(0,0,0,0.35);
 }
-.confetti-container {
+
+
+
+@keyframes gift-pop {
+  0%   { transform: scale(1) rotate(0deg); opacity: 1; }
+  40%  { transform: scale(1.25) rotate(5deg); }
+  80%  { transform: scale(0.9) rotate(-3deg); }
+  100% { transform: scale(0) rotate(10deg); opacity: 0; }
+}
+
+.gift-opening {
+  animation: gift-pop 0.5s ease forwards;
+  
+}
+
+@keyframes glow {
+  0%   { box-shadow: 0 0 0px rgba(255,255,255,0.0); }
+  50%  { box-shadow: 0 0 25px rgba(255,255,255,0.9); }
+  100% { box-shadow: 0 0 0px rgba(255,255,255,0.0); }
+}
+
+.gift-glow {
+  animation: glow 0.6s ease-out;
+}
+.gift-section-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-top: 10px;
+}
+
+.gift-section-title {
+  font-family: 'Mountains of Christmas', cursive;
+  font-size: 36px;
+  color: #ffd523;
+  margin-bottom: 8px;
+
+  text-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.gift-section-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.snow-layer {
   position: absolute;
-  left: 0; top: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+  inset: 0;
   overflow: hidden;
-  z-index: 100;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.confetti-piece {
+.snow {
   position: absolute;
-  width: 8px;
-  height: 12px;
-  background: red;
-  opacity: 0.9;
-  transform: rotate(15deg);
-  animation: confetti-fall 700ms ease-out forwards;
-  border-radius: 2px;
+  top: -10%;
+  color: white;
+  opacity: 0.8;
+  font-size: 18px;
+
+  animation-name: snow-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.snow:nth-child(1) {
+  left: 10%;
+  animation-duration: 8s;
+  animation-delay: 0s;
 }
 
-@keyframes confetti-fall {
-  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(80px) rotate(360deg); opacity: 0; }
+.snow:nth-child(2) {
+  left: 35%;
+  font-size: 14px;
+  animation-duration: 10s;
+  animation-delay: 2s;
+}
+
+.snow:nth-child(3) {
+  left: 60%;
+  font-size: 20px;
+  animation-duration: 9s;
+  animation-delay: 1s;
+}
+
+.snow:nth-child(4) {
+  left: 80%;
+  font-size: 12px;
+  animation-duration: 11s;
+  animation-delay: 3s;
+}
+
+.snow:nth-child(5) {
+  left: 50%;
+  font-size: 16px;
+  animation-duration: 7s;
+  animation-delay: 4s;
+}
+@keyframes snow-fall {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh);
+    opacity: 0.6;
+  }
+  
+}
+.music-toggle {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 9999;
+
+  background: linear-gradient(145deg, #a30e15, #7a0f1a);
+  color: white;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s ease;
+}
+
+.music-toggle.open {
+  width: 200px;
+  border-radius: 30px;
+  justify-content: flex-start;
+  padding: 0 14px;
+}
+
+.music-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.volume-panel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 12px;
+  width: 100%;
+}
+
+.volume-panel input[type="range"] {
+  flex: 1;
+  cursor: pointer;
+}
+
+.volume-text {
+  font-size: 13px;
+  font-weight: bold;
+  font-family: 'DynaPuff', cursive;
+}
+/* ========================= */
+/* HANGING STARS DECORATION */
+/* ========================= */
+
+.hanging-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.star {
+  position: absolute;
+  top: 0;
+  font-size: 26px;
+  color: #fff4c2;
+  text-shadow: 0 0 10px rgba(255, 230, 150, 0.6);
+  animation: sway 6s ease-in-out infinite;
+}
+
+/* Left side stars */
+.s1 { left: 8%;  animation-delay: 0s; }
+.s2 { left: 12%; animation-delay: 1.5s; font-size: 22px; }
+.s3 { left: 16%; animation-delay: 3s; }
+
+/* Right side stars */
+.s4 { right: 16%; animation-delay: 0.5s; }
+.s5 { right: 12%; animation-delay: 2s; font-size: 24px; }
+.s6 { right: 8%;  animation-delay: 3.5s; }
+
+/* Gentle swinging motion */
+@keyframes sway {
+  0%   { transform: translateY(0) rotate(-2deg); }
+  50%  { transform: translateY(6px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(-2deg); }
 }

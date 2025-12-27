@@ -1,0 +1,321 @@
+[
+  {
+    "gifts": [
+      {
+        "Name": "TheDorkKnight",
+        "BoxImage": "Box7.png",
+        "FileURL": "Pictures/Gifts/Dork.mp4",
+        "FileType": "video/mp4",
+        "Message": null
+      },
+      {
+        "Name": "Flower Bee",
+        "BoxImage": "Box5.png",
+        "FileURL": "Pictures/Gifts/Bee.png",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "SeasonHearts",
+        "BoxImage": "Box3.png",
+        "FileURL": "Pictures/Gifts/Season.png",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "Psycho_4006",
+        "BoxImage": "Box3.png",
+        "FileURL": "Pictures/Gifts/Psycho.png",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "Sound",
+        "BoxImage": "Box7.png",
+        "FileURL": null,
+        "FileType": "message",
+        "Message": "Merry Xmas Misa! I cant even begin to summarise how much light and joy and positivity your shiny bald head has brought into my light. its like a divine beacon cutting through the storm that is my life. its so bright and shiny i can always find my way back to it no matter how dark and abyssmal my ffuture seems (granted i have enough channel points to light the beacon). Im sorry i havent been around as much to hang out since i started my new job but i want you to know that seeing the sream notification pop up on my phone during the middle of my work day always brings a smile to my face, as you always do. Never stop being Misa, Misa. you da best and you know it."
+      },
+      {
+        "Name": "Bahjus",
+        "BoxImage": "Box7.png",
+        "FileURL": "Pictures/Gifts/ButtJuice.png",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "O.P.Euphie",
+        "BoxImage": "Box8.png",
+        "FileURL": "Pictures/Gifts/Euphie.png",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "Juniberi",
+        "BoxImage": "Box1.png",
+        "FileURL": "Pictures/Gifts/JuniBeri.gif",
+        "FileType": "image/gif",
+        "Message": null
+      },
+      {
+        "Name": "havo/poof",
+        "BoxImage": "Box5.png",
+        "FileURL": "Pictures/Gifts/poof.png",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "MADVIEW",
+        "BoxImage": "Box3.png",
+        "FileURL": "Pictures/Gifts/MadView.mp4",
+        "FileType": "video/mp4",
+        "Message": null
+      },
+      {
+        "Name": "HaruFlakes",
+        "BoxImage": "Box4.png",
+        "FileURL": "Pictures/Gifts/Haru.mp3",
+        "FileType": "audio/mpeg",
+        "Message": null
+      },
+      {
+        "Name": "Shuya Hideaki",
+        "BoxImage": "Box3.png",
+        "FileURL": "https://youtu.be/Ey5Vd-31jZ8?si=22LCMHFQBZHe5-7u",
+        "FileType": "youtube",
+        "Message": null
+      },
+      {
+        "Name": "AkariQueen",
+        "BoxImage": "Box6.png",
+        "FileURL": "https://youtu.be/5UUVCUUAjaI",
+        "FileType": "youtube",
+        "Message": null
+      },
+      {
+        "Name": "𝓐𝓶𝓮𝓽𝓱𝔂𝓼𝓽",
+        "BoxImage": "Box4.png",
+        "FileURL": "Pictures/Gifts/Ame.png",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "TwitchMon",
+        "BoxImage": "Box7.png",
+        "FileURL": "Pictures/Gifts/TwitchMon.png",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "AshwinKrishna0",
+        "BoxImage": "Box7.png",
+        "FileURL": "Pictures/Gifts/Ashwin.mp3",
+        "FileType": "audio/mpeg",
+        "Message": null
+      },
+      {
+        "Name": "Fenyx ",
+        "BoxImage": "Box7.png",
+        "FileURL": "https://youtu.be/Jnn6pnRNEDU",
+        "FileType": "youtube",
+        "Message": null
+      },
+      {
+        "Name": "Ducksy",
+        "BoxImage": "Box8.png",
+        "FileURL": "Pictures/Gifts/Ducksy.jpg",
+        "FileType": "image/jpeg",
+        "Message": null
+      },
+      {
+        "Name": "Snixer__ (Hongdae Bro #2)",
+        "BoxImage": "Box8.png",
+        "FileURL": null,
+        "FileType": null,
+        "Message": "Merry Christmas and Happy Holidays Misa Bisa Tiramisu. 聖誕快樂!!Selamat Hari Krismas!! Make sure to have a fun time over the winter break and celebrate with lots of yummy dim sum and hotpot season!! Tell Kyle i'll meet him in Hongdae for some delicious Tteokbokki and Bulgogi. Enjoy the party mighty Belden Ring Queen! ~ Hongdae Blud "
+      },
+      {
+        "Name": "REIN",
+        "BoxImage": "Box1.png",
+        "FileURL": "Pictures/Gifts/Rein.png",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "Just_Crit",
+        "BoxImage": "Box5.png",
+        "FileURL": "Pictures/Gifts/Crit.PNG",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "Shamimimimi",
+        "BoxImage": "Box4.png",
+        "FileURL": "Pictures/Gifts/Shamimi.PNG",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "izchillz",
+        "BoxImage": "Box5.png",
+        "FileURL": "Pictures/Gifts/Chillz.mp3",
+        "FileType": "audio/mpeg",
+        "Message": null
+      },
+      {
+        "Name": "Zanco103",
+        "BoxImage": "Box7.png",
+        "FileURL": null,
+        "FileType": null,
+        "Message": "Merrrryyyyyy Christmas MisaMisa!!!! It's been a wild year seeing you grow from where you were to where you are now and I'm so happy I got to be a part of your journey. It's amazing to see a community grow from just a few people to over 350 (in the discord) being a part of such a tight knitted community is honestly so much fun, Making inside jokes along the year and getting to know everyone better was wonderful. I'm sure next year will be even better! Misacon2026 Will be just as fun as 2025 and ofc I'll host it again! :3 "
+      },
+      {
+        "Name": "Skar",
+        "BoxImage": "Box1.png",
+        "FileURL": null,
+        "FileType": null,
+        "Message": "My thoughts\n\nGood [Insert day time here] Misa.\n\nI must preface that you do not have to read the entirety of this message. This is more of a vent appreciation post. If you do decide to read the whole thing then I’m so sorry everyone. This will be a long ten-thousand words. Five thousand words now and another five thousand words for next year (or whenever I decide to complete it).\n\n*AHEM* I first met Misa in 2024 november-ish. She was soft spoken, uncertain, and approval dependent. Perfect for an upcoming streamer. As time continued I forgot about Misa, I was never particularly predisposed to watching any kind of twitch streamer. In fact I actively avoided twitch as I was rather annoyed over how monetarily focused the website was. So once I saw Misa I treated her like I did most other early small streamers. Gave my pleasantries, wished her luck and moved on. It wasn’t until a little while later that I came back on a whim. \n\nMaybe a week or so later, Misa appeared to be streaming a halloween focused storytime. She was reading some stories and I was in a very apathetic mentality. As a half joke I recommended my most personal scary story. I was expecting to be ignored or not taken seriously. She saw my message and said she would read it in a bit, unfortunately I had to head to work. I don’t really remember the day, I’m sure it wasn’t that interesting, but I remembered Misa saying she’d read my recommendation. Well sure enough when I came back and found the vod she had read it. It didn’t hit the mark like I’d hoped, but that wasn’t what mattered. She’d taken my suggestion and gave it a shot. That’s not something I was expecting. It mattered even more so because of how important I personally considered the story. When I recommend something to someone they don’t follow through. I never blamed them. I was just as bad. But Misa is different. She’s earnest. That’s something I rarely find in people of today. It was right there I decided to actually commit to watching Misa.\n\nNOTE: Not sure whether I subbed before or after the story recommendation. I never valued a sub that much. It’s only 5 dollars.\n\nContinuing to watch Misa she was trying new games here and there and before long a game I was anticipating, Wuthering Waves, was released. Sure enough Misa decided to try it out and I was thrilled at this point because I was already excited for the game. Not to mention I was interested in the community at this point. I was starting to get familiar with a couple of the discord users. Zanco, Kyle, and Qiefeng (QWEEEEE!!!!). My interest peaked, but I ‘m a cynical person at heart so I still had my foot out the door in a sense. Maybe I was just lucky. ‘These people aren’t really present.’ ‘This will just be another point in time.’ ‘What is this now? Number 8?’ ‘Whatever, these guys don’t like showing their faces so it’s not like they’re serious about getting close.’ \n\nThese words still ring true to this day, but to think like this was very closed minded of me. Time passed by. I kept watching and saw more genuine moments. A Christmas celebration (nice drunk voice btw Misa). Long as fuck discord calls. Long game sessions. I was starting to feel a little more connected. \n\nUnfortunately the reality of twitch came back. Misa is a variety streamer and loves to chat first and foremost with her community. I chatted and tried to just exist as a viewer while I did other things such as gaming, writing, cooking, throwing my cat on the couch, etc. Sadly her chatting is not my jam, and while I can and still do interact with Misa and the stream I end up lurking instead. No stress to you here Misa, I also felt disappointed in myself with how I couldn’t enjoy the Zatsu streams. \n\nThen I found it. THE VIP BADGE! Thank the lord that was there. My gamer mind had an excuse to watch Misa. Coming on her streams as much as physically possible. This gave me ample time to actually interact more and more. She still streamed wuwa and I still enjoyed the game at the time. I grinded streams. Left my pc on. Anything. I thought if I became a vip that would help me view myself as someone who was earnest as well.\n\nHow pathetic.\n\nNonetheless I did get that badge and while a part of myself knew it wanted to be there for the community, the same way Misa did, I could already feel my interest starting to drop and found myself lurking more and more. (Yes Misa, I know it’s fine if I lurk. But to me at the time, lurking was the step before bowing out.) Thankfully a new event was on the horizon. Dungeons and Dragons.\n\nI never played dungeons and dragons. In fact my only experience with the format was my little brother. He was the perfect example of- you know what that’s not really important right now. What is is that Misa was planning to start dipping her toes into a game that I could be more involved in, and that excited me. Not to mention that other new members started to join that I could chat with even longer and get to know/talk to like Riki, Pirate, ….. Jung poop. I felt reinvigorated and totally elated to know I wasn’t having to try to enjoy my time anymore. Sure, Misa wasn’t streaming wuthering waves as much anymore but I was never really able to play with her anyways. But DnD? That was something I could do every week with others. What’s that? I have to wake up at 7am on a Sunday? *INHALE*\nNo, it’s fine. It’s fine. I never liked sleeping on my day off. You know what? I can just sleep afterwards anyways. Screw it! We're staying up for each session (I never stayed up once. I was a groggy bitch every morning.)\n\nAnd for a time I was totally content. Misa, your streams were now even more unique to me. It was more engaging knowing I participated and contributed to the ever growing lore of Misa’s basement. Months of sessions. Campaign one, our asses we’re stuck in a well. Campaign two, our asses we’re stuck solving puzzles.Campaign three, I kicked my own ass out cause we had too many people. Each time we got on I learned more about what kind people were on your server. Wow what weirdos XD.\n\nDuring these times I would occasionally stream as well and it was always the coolest to have you, Qwee, kyle, or others whose names elude me, watch my stream. Man that was cool. Being able to chat with you guys while I was gaming with others. Although I’d rather play games with you (everyone). As that’s way more fun but sadly, you guys are the last on earth I’d expect to play zombies with. Thank goodness some of you have other games you like to play (Qwee) or else I'd be so bored.\n\nYet, as much fun as all that was, they too ended (not the gaming/streaming though, thank goodness) . I continued watching as at this point we were starting to prepare for your one year anniversary……. Birthday? Nah it was your anniversary. We’re finally entering the point in your channel at which I evolved into more of a lurker and less on a watcher/chatter. \n\nJust like how things started to feel before DnD I’m back at the point where I’m not necessarily playing the same games as you. Just chatting isn’t too much of my forte cause it’s hard to have conversations with so many chatters. Oh yea congrats on the growth. You used to average between 30-50 per stream but now it seems you go between 45-80. I mean hell, I’m watching your stream now and you’re at 152. Look at you grow.\n\nI wouldn’t feel bad if I were you though Misa (If you are feeling bad, if you’re not you can disregard the cheer up/glaze paragraph). You started last year and grew very solidly. You accrued a dedicated audience with valuable people to help you along the way. Kyle, holy, …… that other guys whose name is slipping my mind right now. You’ve held events. Your variety is outstandingly healthy. You are a very likeable person who is easy to have fun in the moment with. It’s not a big surprise that frankly, it’s hard to keep up with chatters to the point that you put a ‘Misa look here’ redeemable. There’s a (several) reason you’re the only streamer I’ve actually kept coming back to. So let’s start talking about that.\n\n\nWhy Misa’s a damn good Steamer.\n\nConsistency: Let’s start with the most important one. As a coach I always tell my dumbass students that improvement only comes with consistency. Any skilled worker or individual will tell you the same. Misa, with how consistent a streamer you are, you prove that point through and through. I can’t think of one week where you didn’t pop in bare minimum two times. And that’s disregarding how you normally stream 5 days minimum. You have shown that with commitment and persistence you can grow and progress with what you want to do. \n\nFlexibility: The capability to be a variety streamer incentivises growth. You are taking from multiple sources of interest which in turn allows you to pull from many different audiences. This has its setbacks especially in gaming/streaming of being called a causal. A jack of all trades if you’re lucky. You know the deal. However it doesn’t detract from the fact that it’s more important to pull from different audiences and you pull rather broadly for twitch Misa. Chatting, gaming, and singing being your most preferred are probably the top three you could have a Vtuber (I wonder if you did that intentionally). Not to mention you offset the negative repercussions of flexibility with what’s next.\n\nCharisma: YEA YEA YEA! Misa does not like boasting about herself. You’ve been brought to tears about how you feel undeserved over the affection and admiration of others. Well get ready for a breakdown about why it’s deserved. \n\nHumility - The manner in which you present yourself to others comes as a very down to earth and personal individual. You make yourself easily engaging to others. You always say hi to them, you always ask how they’re doing and as much as you can you try to maintain that one to one interaction. That’s a level of personal experience. People don’t normally have the luxury to experience day to day. So the fact that you can bring them that experience is valuable.\n\nLikeability - You are a rather pleasant person to interact with Misa. Slightly gullible, talented, funny, fun to root for, invested in your development and growth. Things like these all make you appealing for someone to naturally want to be around/watch you. I don’t think it’s unreasonable to agree with me on any of these. After all, half of what I said is why I enjoy watching you still.\n\nHumor - I know it was mentioned in passing earlier but making others laugh is very important. Laughing at the situation. Laughing at others. Laughing at yourself. You do all three very well, whether you intend to or not. Humor is what we don’t have in our day to day. Wake up, eat, work, eat, go to bed, and do it again. This is the cruel reality for so many and you give many an escape from that. Those people are eternally grateful to you. So take a bow.\n\nRelatability - ….. Nope, I actually don't really have too much here. You’re a bit more private about your personal life. You’ve brought up things here and there but you avoid bringing up your struggles to us. Not a negative by any means. Moving on.\n\nStupidity - HEAR ME OUT!!!! Many of your viewers (totally not me). Are straight braindead. This level of simplicity and dumbassery can be seen as a boon to how to present yourself to others.\n\n4. Community - The actual commitment to create and follow through events and community celebrations is an integral part to grow the appreciation of your former viewers while showing new viewers what they have to look forward to. It also helps you appreciate what you have as a smaller streamer. \n\n5. Heart - This one here is rather unique. As a vtuber you naturally hide behind the persona that is your streamer self. This can be seen as deceitful or half hearted to others as we know you don’t trust (RIGHTFULLY SO!!! I cannot express this enough! I swear if you take this negatively then shame on you!) your viewers with your real life appearance. However, you show through your actions, words, and emotions, that what you give is nothing but your best. We’re shown repeatedly how much we mean to you and no one would argue that you don’t put your heart into what you’ve done for your viewers. Take pride in your effort.\n\n6. Timing - Streaming during the evening in America is without a doubt why you have so many of us invading your stream. While you have streamed at different parts of the day, you’ve told your discord users ahead of time as a precaution.\n\n7. Transparency\n\nAll these traits that make up who you are as Misamisa are so valuable to you that I think they should be mentioned. Of course those like Kyle, holy, and that other guy whose name still slips my mind, will absolutely be able to bring up many more reasons as to why you deserve the praise/success you have. \n\n\nMisa’s model\n\nI’ve seen two iterations of your model so far. The 3d magnificence and the now sleek 2d refinement that was your old model. Let’s start with appreciating the old model.\n\nMisa 3D: You had a very humble beginning with a 3D model that set your tone perfectly. It expresses your emotions through quick and sharp movements wonderfully. At the same time it gave a humorous side of struggling with expressions, allowing your viewers to laugh at the constant smile of Misa’s everbearing :)\n\nI remember at times how you expressed your desire to update your model and how you didn’t like the 3D version that much. I do hope you know that many of us found the model you began with as very sweet and fresh as most of what we saw had become frankly stale. The same emotions, the click between expressions, and the ‘jiggle physics’ to entice those watching are rather overdone. I won’t fault you for wanting the newer model, but please give thanks to the hard working 3D agent Misa. NOT TO MENTION it gave us the best thing I’ve seen only you do as a streamer. The legendary Baldisa!\n\nMisa 2D: The long awaited upgrade Misa so desired.  There has yet to be much seen as we’ve only gotten to spend a few months with our new 2.0 Misa. The best part of 3D Misa fortunately carried over (Baldisa). As time passes I’m sure my feeling will improve for 2D Misa. The new outfit. Changing hairstyles beyond just …… Bald. The sleep mode which somehow has your eyes open at random intervals. \n\nMild criticism for this model would be how the bald redeem is lower value now. Before it was 10k for 15 minutes of bald. AND sometimes you even forgot to put the hair back on leaving it open for extended durations. Now it’s 5000 for 5 minutes, what a scam. Next is the motion, before we had a much cleaner movement given by the 3D model whereas now it is more restrictive and linear. That’s about it, any other critics would be rose tinted due to nostalgia. I’m glad you enjoy your new model.\n\n\nCelebrations: This will just be a quiet section about how I really like the way you celebrate special occasions. Drawing your viewers (who submit a request) on a picnic is really wholesome. If you can find a way to get creative with this, finding new areas to picnic, creating different scenarios, or doing something I can’t even think of, then I would be very impressed. Thanks Misa for doing the picnics. They’re very cute and I have each image saved for the picnics I remembered to sign up for.\n\n\nGeneral Critiques\n\nI’m not gonna like this section as I’m worried you might take these too much to heart but I need that word count to go up so I have to just bite the bullet I guess. DISCLAIMER: This by no means expresses that Misa is a bad streamer and should be recognized as a section where I want Misa to know she can enhance the certains areas of her community or make herself more appealing to other potential viewers. This is by my account, one of a casual lurker who subs when he can.\n\nAttention to chat - We all know this one. The way in which you can get distracted, lose a message, or just blackout when someone is talking to you is noticeable in every stream. Your efforts to avoid this through the ‘look here Misa’ is admirable, but nonetheless there are messages that will always slip through.\n\nOff stream engagement: This used to be on the positives for me, but lately it has dipped into the negatives. Whether for personal or stream-like reasons your presence off stream or in the discord has dwindled. The last time I can think that you were hanging around in a voice chat in the discord (out of stream that is) would be the DnD sessions\n\nMarketing: I’m not sure how much you care about this but I don’t really see and Misamisa stuff on instagram, tiktok, billibilli, twitter (screw twitter though). Maybe clips of your streams of videos from youtube can help you branch out into areas you’ve yet to dip your toes in?\n\nNot sticking to one game: This is a rough one for me because I love sticking to one particular game. In the streaming world it is much healthier and smarter to swap back and forth between games you like and new games you wanna try out. Not to mention that you have the benefit of playing some of these new games with viewers or streamers as well. I get that this one sounds much more of a positive point and it is. The only reason it’s here in the negative section is because it drives disinterest for me to watch. To cut this short, this is a more personal critique and one that should be taken with a grain of salt.\n\nEditor's note: Dear lord, I'm so stuffed. Misa it may not be clear but I’ve taken about two weeks to write this. Half the time I’m sure I was drunk but a quarter of that time I eat too damn much because eating helps me think …… for some damn reason. Anyways back to your in depth breakdown/analysis or our streamer viewer relationship :) \n\n\nYour celebrations\n\nThese are great. Being able to celebrate and reminisce with the viewers and members of your community is always a fun highlight of any streamer. I’m so glad you first can be so simple and sweet. The anniversary being a celebration of how far you come and the most recent christmas medley being a combo of songs and letters written to those closest in your streaming community. The way you cherish those who are right there with you is sweet. \n\nAs sad as it is to say, my memory is not the best for these streams as I think I only lurked for the anniversary and christmas stream. And I think I may have been absent for the birthday stream. I do remember you having a great time so by all means, pat yourself on the back.\n\n10/10 no notes or critiques here. Please continue these traditions. We all like them.\n\n\n“Reality”\n\nAlright, just like the critique section I’m not gonna be too happy writing this one either. Nonetheless there’s a part of me that wants to write this for you for no other reason other than ‘because I care’. Misa, you are growing as a streamer. With that will come challenges and ugly sides to a community I pray you have not experienced yet. You’re gonna come across haters, liars, thieves, criminals, scammers (though you definitely already encountered them), and monsters. You’ll receive death threats, unwarranted haters, stalkers, weirdos, grap-ists, and even worse. \n\nYou might get scammed, you might get hacked, you might get tricked, lied to, and god forbid even have your identity leaked. I’ve been fortunate to see none of this happen but that doesn’t mean you haven’t been dealing with this without me even knowing. Please remain strong Misa.\n\nYou have incredibly trustworthy friends in this community who have been there for you way better then myself or any other viewer or subscriber that can be. I can only hope they’ll protect you and support you when it means the most.\n\nThe bigger you grow, the more these problems will come. You might have to put more of your trust out there. You might get blindsided when this happens. Please don’t give up when it does. You’re a strong person. You can bounce back. You can get back up. We’re here to help make that happen, however we can. \n\nNow for a touchy part. You matter to a lot of people. You’ve touched their lives and their hearts. You’ve formed bonds, friendships, and more. This is what you have done in a year and you will continue to do more the longer you are one here. This can seem scary, maybe even terrifying , but that’s not what I want you to think of this as. This is beautiful. What you’re doing is beautiful.. What you did has made connections, connections that will last a lifetime. How beautiful is that? You gave people a reason to wake up in the morning. To smile when they got home. To smile when they left home. A reality that might seem abstract but is nonetheless there. You are that connection. We go our whole lives not knowing the impact we have on others. Yet here we can see yours. Hundreds of people’s lives were touched by you. Dozens were changed because of you. And once more, this number will only continue to grow and that’s a beautiful thing.\n\n\nMy thoughts (part 2)\n\nWell goodness, my thoughts. I don’t like speaking my thoughts or more importantly my feelings. It leaves myself open to judgment and I really really hate speaking the way I truly feel because I hate rejection. Nonetheless, you deserve it Misa.\n\nBeginning: I thought you were another cute timid vtuber who just started. You looked, frankly, nervous and it made me want to support you so I could get to know you a little better. Whether that was personally or as a streamer I didn’t know or really cared. I subbed, and interacted. Made a recommendation for your next stream for a story and poofed away. I barely went on twitch and rather disliked the platform (I still do to some extent) and forgot about you for a while.\n\nStart: When you paid me attention I reciprocated. I figured what I did bore fruit and I could get to know you a bit better. I think I joined your discord and might have lurked in a voice channel here and there but I’d done this about ten or so times before so I never expected anything of it. I kept watching your streams and you kept interacting with me and I started to want to interact with your community as a result.\n\nNon-commital: Still not sure what I wanted to do here. I finally made a decision that I wanted to be there for you but as a community member. As you read earlier that resulted in the vip grind. Throughout this period I wanted your attention first and foremost. I was still half committed to interacting with your community and was ready to bounce if I wanted to. I’m sure it must sound weird to read or hear this but this is the truth. \n\nAfter: Time passed. You changed. I can’t exactly pin it on one thing. I’m not even sure if you’re aware of it. But something shifted and I’m pretty sure it was around the time with the DnD sessions. I didn’t want to get closer to you anymore. I was, the time you spent in the discord plus the time I got to interact with you felt so inviting that I didn’t really care anymore. While there’s another issue I won’t delve into here, the initial hurdle was cleared and I became, in my own eyes, a member of your community.\n\nPost DnD: After the third session where I felt obligated to leave (not your fault, don’t worry) I started pulling away. You might’ve noticed my increased absence in the streams …… or not, maybe I’m overvaluing myself. Regardless, I lost reasons to come back so I used the excuse of being ‘busy’ to do just that. I lurked more in twitch. I only watched the discord instead of chatting in it. I even convinced myself that, ‘I’m still “watching” the stream so it’s fine.’.\n\nPresent: Not sure when but I’ve been trying to come back more to the discord and streams. I still lurk (honestly I don’t think I’ve missed a stream in 2 months) and I enjoy chatting in the vc the most. I’m not sure how you feel after all that you’ve read (sweet christ Misa why are you reading all this) but I’m starting to arrive at the point where I’m unsure.\n\nRamblings: Please skip this part. If there was any part to skip because what I’m saying is starting to not make sense, this is the point. I have in my head a set of boxes where I place people under generic stereotypes. Of course the more I get to know a person, the smaller their box gets. I do this as a sort of profiling ritual so I can know how to interact with them. It’s something I started to do around middle school. While I have messed up one or two times, this method has gotten me out of a lot of sticky situations and helps me with tough choices. Like choosing whether to lie or apologize and tell the truth. But I’m starting to get off track.\n\nSometimes I encounter weirdos or enigmas who need their own separate box. Frankly they are far and few in between. I’m annoyed to say that you’ve approached the box where you only have one roommate. While I do have a few people in their own box it’s not much easier with someone like you as well. I’ll be honest Misa, I don’t like the box that you’re in and would prefer to put you elsewhere. When I tell people about this box system some either say that they have the same system OR they ask me what box they’re in.\n\nI’m going to assume you are the type to want to know which box you’re in so if I’m wrong ……. Well I have to move you around and you should stop reading this specific paragraph BUT if I’m right, then I guess keep reading. *Phew* Misa you strike me as a heavily introverted person who only starts to open when someone is your friend. Chat qualifies as ‘friend’ but we aren’t too close. Your introversion is something that affects your day to day. You’re on the timid side, you’ll move out of the way when walking. You’d rather google a grocery store layout to find something instead of asking for help. WORST OF ALL this timid demeanor affects things such as cleanliness, diet, and self care (getting sick). That is you’ll do the bare minimum (for cleanliness you’ll actually have a very minimal home area with even smaller dirt/mess) and you find yourself not eating if it’s inconvenient or you just forget. Others tend to worry if you’ve eaten or have drunk enough water (assuming you’re obsessed with a soda or non-hydrating beverage). You overwork yourself and feel bad if you can’t finish the unreasonable amount of work you gave yourself. Stress is an everyday issue and the idea of just ‘not worrying about it’ is foreign to you. Most horridly, if you make a mistake you’d rather suffer in silence instead of asking for help that everyone would love to give you. The idea of being a burden to someone else might be your worst nightmare. On the plus side you love making others happy. XD While you don’t crave validation, it is a nectar you can’t help but indulge in when it's given, except you start feeling guilty when you hear it and reject the compliments if you feel unworthy of them. \n\nConclusion: Misa you are a charismatic comfort to us and we all cherish, value, and even fawn over your presence. I think it’s fair to say we would all be happy if you stay with us for the foreseeable 2026. The joy you bring to us through your streams are, once more, an escape from the problems called ‘reality’. Everyone one of us hopes and prays for whatever future you want and will watch with abated breath hoping you will find that exact dream you so deserve. Merry Christmas and I hope I made it to your stream to support you. Unless you decided to stream at some ungodly hour like 5am.\n\nMuch love from your undeserved fan -Skar\n\n\n"
+      },
+      {
+        "Name": "Chris_Bronze",
+        "BoxImage": "Box2.png",
+        "FileURL": "Pictures/Gifts/Chris.jpg",
+        "FileType": "image/jpeg",
+        "Message": null
+      },
+      {
+        "Name": "iIiIMOONLight\r\n",
+        "BoxImage": "Box5.png",
+        "FileURL": "Pictures/Gifts/moon.mp4",
+        "FileType": "video/mp4",
+        "Message": null
+      },
+      {
+        "Name": "Ahoihoi",
+        "BoxImage": "Box7.png",
+        "FileURL": null,
+        "FileType": null,
+        "Message": "It is a rare and special thing, to happen upon such a kindly place. Where I expected ephemeral entertainment, I was met with genuine mirth. Where I expected passing novelty, I encountered talent. When I expected posturing and competition, I found kindly wholesomeness. These are small words but small words and small things have a way of taking root. You are an anomaly in the best of ways, and it is the small wish of a grovetender that you ever grow greater. So many of such disparate places have found a joyous place in your garden, and for that no words I can give would be proper praise."
+      },
+      {
+        "Name": "MiraiBytes",
+        "BoxImage": "Box4.png",
+        "FileURL": "Pictures/Gifts/Mirai.png",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "havo/poof 2 ",
+        "BoxImage": "Box6.png",
+        "FileURL": "https://oxpkmwbqcvljgyjardzi.supabase.co/storage/v1/object/public/Gifts/1766589589465_Christmas.mp4",
+        "FileType": "video/mp4",
+        "Message": null
+      },
+      {
+        "Name": "breakabelle_pe",
+        "BoxImage": "Box7.png",
+        "FileURL": "Pictures/Gifts/Belle.png",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "shoko",
+        "BoxImage": "Box3.png",
+        "FileURL": null,
+        "FileType": "message",
+        "Message": "thank u misa for an amazing year. u r so chinese this year :3"
+      },
+      {
+        "Name": "taytay",
+        "BoxImage": "Box8.png",
+        "FileURL": null,
+        "FileType": "message",
+        "Message": "Merry Christmas Misa! Its been a wild year and im so glad to have met you! All the enjoyable memories we've made together on streams really brings alot of joy when i think about it, have a lovely christmas this year and here's to 2026! Cheers!"
+      },
+      {
+        "Name": "Loiraine",
+        "BoxImage": "Box7.png",
+        "FileURL": "Pictures/Gifts/Loi.png",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "Koroniium",
+        "BoxImage": "Box2.png",
+        "FileURL": "Pictures/Gifts/Koro.gif",
+        "FileType": "image/gif",
+        "Message": null
+      },
+      {
+        "Name": "Qri",
+        "BoxImage": "Box5.png",
+        "FileURL": null,
+        "FileType": "message",
+        "Message": "https://drive.google.com/file/d/1jG8VGzCxLDZKVT5oL3x5JE-TNOILHjnO/view?usp=sharing"
+      },
+      {
+        "Name": "referencerat",
+        "BoxImage": "Box7.png",
+        "FileURL": "Pictures/Gifts/Refernce.png",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "HOLY BOAHAHAH",
+        "BoxImage": "Box5.png",
+        "FileURL": "Pictures/Gifts/Holy.png",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "QiuFeng",
+        "BoxImage": "Box5.png",
+        "FileURL": "Pictures/Gifts/Qiu.png",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "Kyle",
+        "BoxImage": "Box7.png",
+        "FileURL": "https://youtu.be/QLIcp7Adss0?si=XwGtgRSCDVCmHFzl",
+        "FileType": "youtube",
+        "Message": null
+      },
+      {
+        "Name": "Tsuki ",
+        "BoxImage": "Box4.png",
+        "FileURL": "Pictures/Gifts/Tsuki.png",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "Rinb009",
+        "BoxImage": "Box3.png",
+        "FileURL": "Pictures/Gifts/Rinboo.png",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "esbaba",
+        "BoxImage": "Box4.png",
+        "FileURL": "Pictures/Gifts/Esba.jpg",
+        "FileType": "image/jpeg",
+        "Message": null
+      },
+      {
+        "Name": "Myouko tan",
+        "BoxImage": "Box4.png",
+        "FileURL": "Pictures/Gifts/Myouko.png",
+        "FileType": "image/png",
+        "Message": null
+      },
+      {
+        "Name": "Myouko",
+        "BoxImage": "Box4.png",
+        "FileURL": null,
+        "FileType": "message",
+        "Message": "Merry Christmas Misa chan! \n\nOur beloved cutie pie  <3  I hope this beautiful season surrounds you with warmth, peace, and quiet happiness. May the soft glow of the lights, the calm of the day, and the little moments in between bring comfort to your heart. You deserve kindness, and love in all its simplest and purest forms. More Gah to come.\n\nI hope today reminds you how special you are.. not just for what you do, but for who you are. Your presence brings a gentle light that makes everything feel a little safer and a little brighter. May this Christmas give you rest from worries, strength for tomorrow, and a deep sense of being cared for.\n\nAs the year comes to a close, I wish you calm nights, hopeful mornings, and a heart full of warmth that carries with you long after Christmas has passed.\n\nWe all love you from the bottom of our hearts..\n\nMyouko :3"
+      }
+    ]
+  }
+]

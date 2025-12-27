@@ -1,3 +1,60 @@
+.room-hero {
+  width: 100%;
+  padding: 60px 20px 50px;
+  text-align: center;
+
+  background: linear-gradient(
+    180deg,
+    #2a0a0d 0%,
+    #7a0f1a 100%
+  );
+
+  border-bottom: 3px solid rgba(255, 215, 35, 0.4);
+}
+
+.room-hero-title {
+  font-family: 'Mountains of Christmas', cursive;
+  font-size: 48px;
+  font-weight: 900;
+  color: #ffd523;
+  margin-bottom: 12px;
+
+  text-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+.room-hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+
+/* Full-page wrapper split 50/50 */
+.room-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+.room-top-wrapper {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+
+  gap: 36px; /* more breathing room */
+
+  width: 100%;
+  padding: 32px 24px;
+
+  background: radial-gradient(
+    ellipse at center,
+  #181214
+
+
+
+  );
+}
 .container {
   text-align: center;
   margin-top: 80px;
@@ -12,30 +69,76 @@
   margin: 10px;
 }
 .video-page {
+  flex: 1;              /* 🔥 THIS IS THE KEY */
+  min-height: 0;        /* prevents overflow bugs */
+
   position: relative;
-  width: 100%;
-  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
 
-  /* Create the border frame */
-  border: 20px solid black;
-  box-sizing: border-box;
-
-  /* Optional: Slight shadow for depth */
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
-
-  overflow: hidden;
+  background-color: #0F2A1D;
+  padding: 40px 20px;
 }
 
-/* FULLSCREEN BACKGROUND VIDEO */
+
+
+/* 🎬 VIDEO CARD */
 .bg-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* completely fills screen */
-  transform: translate(-50%, -50%);
-  pointer-events: none; /* make video not interactable */
+  max-width: min(90vw, 900px); /* 🔥 viewport-aware */
+  aspect-ratio: 16 / 9;
+
+  object-fit: cover;
+  display: block;
+
+  /* Elegant frame */
+  border: 10px solid #000;
+  border-radius: 14px;
+
+  /* Cinematic depth */
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 2px rgba(255,255,255,0.08);
+}
+.chibi-column {
+  width: 500px;
+  height: 500px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-shrink: 0; /* 🔥 prevents squeezing */
+  z-index: 3;
+}
+
+
+.chibi-column.left {
+  margin-right: 40px;
+}
+
+.chibi-column.right {
+  margin-left: 40px;
+}
+.chibi {
+ max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+
+  pointer-events: none;
+  user-select: none;
+
+  filter:
+    drop-shadow(0 10px 18px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 0 12px rgba(255, 215, 100, 0.25));
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
 }
 
 /* NEXT BUTTON FIXED AT BOTTOM */
@@ -58,6 +161,23 @@
 
 .next-btn-bottom:hover {
   transform: translateX(-50%) scale(1.05);
+}
+@media (max-width: 1200px) {
+  .chibi-column {
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 950px) {
+  .video-page {
+    flex-direction: column;
+  }
+
+  .chibi-column {
+    width: 360px;
+    height: 360px;
+  }
 }
 
 /* Container for both halves */
@@ -86,7 +206,7 @@
 }
 
 .bottom-section {
-  background: #b8e7ff; /* light winter blue */
+  background: #0F2A1D; /* light winter blue */
 }
 
 /* SNOW ANIMATION */
@@ -144,6 +264,7 @@
   cursor: pointer;
   box-shadow: 0 4px 14px rgba(0,0,0,0.25);
   transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 48px; /* 🔥 pushes it down cleanly */
 }
 
 .next-btn-section:hover {
@@ -160,7 +281,7 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-
+ 
   display: flex;
   flex-direction: column;     /* stack children vertically */
   justify-content: flex-start; /* start content at top */
@@ -169,11 +290,11 @@
 
 /* Background colors */
 .not-misa-page {
-  background: #7a0f1a; /* deep crimson */
+  background: #6B1F2B; /* deep crimson */
 }
 
 .misa-page {
-  background: #b8e7ff; /* soft icy blue */
+  background: #0F2A1D; /* dark green*/
 }
 
 /* Center card */
@@ -188,7 +309,10 @@
   z-index: 10;
   max-height: 70vh;       /* card never grows past 70% of screen */
   overflow-y: auto;
-   padding-right: 12px; 
+    transition: transform 0.3s ease;
+    cursor: pointer;
+
+ 
 }
 .message-card::-webkit-scrollbar {
   width: 8px;
@@ -201,6 +325,10 @@
 
 .message-card::-webkit-scrollbar-thumb:hover {
   background: rgba(0,0,0,0.4);
+}
+
+.special-card:not(.open) {
+  animation: softPulse 2.2s infinite ease-in-out;
 }
 .center-content {
   justify-content: center !important;
@@ -264,31 +392,579 @@
     flex-direction: column; /* Stack vertically */
   }
 }
-.volume-control {
+.music-toggle {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 18px;
+  right: 18px;
   z-index: 9999;
+
+  background: linear-gradient(145deg, #a30e15, #7a0f1a);
+  color: white;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
 
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
 
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(6px);
-  padding: 8px 14px;
-  border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s ease;
 }
 
-.volume-control input[type="range"] {
-  width: 120px;
+.music-toggle.open {
+ width: 260px;   
+  border-radius: 30px;
+  justify-content: flex-start;
+  padding: 0 14px;
+}
+
+.music-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.volume-panel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 12px;
+  width: 100%;
+}
+
+.volume-panel input[type="range"] {
+  flex: 1;
   cursor: pointer;
 }
 
-.volume-label {
-  font-size: 14px;
+.volume-text {
+  font-size: 13px;
   font-weight: bold;
+  font-family: 'DynaPuff', cursive;
+}
+.volume-slider {
+  width: 70px;
+  flex-shrink: 0;            /* 🔑 don’t collapse */
+  cursor: pointer;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;            /* 🔑 important */
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  flex: 1;                   /* 🔑 takes middle space */
+  min-width: 0;              /* 🔑 allows ellipsis */
+}
+
+.track-info .name,
+.track-info .song {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-info .name {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.track-info .song {
+  font-size: 11px;
+  opacity: 0.85;
+}
+.track-count {
+  font-size: 10px;
+  opacity: 0.7;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+}
+
+
+.page-fade-wrapper {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.page-fade-wrapper.fade-out {
+  animation: fadeOut 0.4s ease forwards;
+}
+
+.page-fade-wrapper.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+/* ========================= */
+/* HANGING STARS DECORATION */
+/* ========================= */
+
+.hanging-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.star {
+  position: absolute;
+  top: 0;
+  font-size: 26px;
+  color: #fff4c2;
+  text-shadow: 0 0 10px rgba(255, 230, 150, 0.6);
+  animation: sway 6s ease-in-out infinite;
+}
+
+/* Left side stars */
+.s1 { left: 8%;  animation-delay: 0s; }
+.s2 { left: 12%; animation-delay: 1.5s; font-size: 22px; }
+.s3 { left: 16%; animation-delay: 3s; }
+
+/* Right side stars */
+.s4 { right: 16%; animation-delay: 0.5s; }
+.s5 { right: 12%; animation-delay: 2s; font-size: 24px; }
+.s6 { right: 8%;  animation-delay: 3.5s; }
+
+/* Gentle swinging motion */
+@keyframes sway {
+  0%   { transform: translateY(0) rotate(-2deg); }
+  50%  { transform: translateY(6px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(-2deg); }
+}
+.slide-img {
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease,
+    filter 0.9s ease;
+
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+/* when switching */
+.slide-out {
+  opacity: 0;
+  transform: scale(0.92);
+  filter: blur(6px);
+}
+
+.special-card {
+  background: #BFE9FF; /* soft romantic pink */
+  border: 2px solid #ff69b4; /* hot pink border */
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Special subtle heart pattern */
+.special-card::before {
+  content: "💙";
+  font-size: 5rem;
+  color: rgba(255, 105, 180, 0.15);
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  transform: rotate(-15deg);
+}
+
+/* Pulse animation to highlight the special card */
+.special-card:not(.open) {
+  animation: softPulse 2.2s infinite ease-in-out;
+}
+
+@keyframes softPulse {
+  0% { transform: scale(1); box-shadow: 0 0 12px rgba(255, 105, 180, 0.3); }
+  50% { transform: scale(1.03); box-shadow: 0 0 20px rgba(255, 105, 180, 0.5); }
+  100% { transform: scale(1); box-shadow: 0 0 12px rgba(255, 105, 180, 0.3); }
+}
+.back-btn {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 9999;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: linear-gradient(145deg, #a30e15, #7a0f1a);
   color: white;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.back-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.95;
+}
+/* ===============================
+   FINAL CANVAS CARD (PAGE 6)
+   =============================== */
+
+.final-canvas-card {
+  width: min(92vw, 1100px);   /* BIG card */
+  max-height: none;
+
+  padding: 56px 64px;
+  border-radius: 28px;
+
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #f7fbff
+  );
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    0 0 40px rgba(190, 230, 255, 0.35);
+
+  position: relative;
+  overflow: hidden;
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+/* Collapsed state */
+.final-canvas-card:not(.open) {
+  max-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+
+  color: #003a66;
+  background: linear-gradient(
+    145deg,
+    #cdeeff,
+    #0090e4
+  );
+
+  animation: softPulse 2.5s infinite ease-in-out;
+}
+
+/* Expanded state */
+.final-canvas-card.open {
+  transform: scale(1);
+  animation: none;
+}
+
+/* Title */
+.final-canvas-card .message-title {
+  font-size: 34px;
+  margin-bottom: 28px;
+  color: #0a3558;
+  text-align: center;
+}
+
+/* ===============================
+   FINAL CANVAS REVEAL CARD
+   =============================== */
+
+.final-canvas-card {
+  width: 85vw;          /* 🔥 BIG */
+  height: 70vh;         /* 🔥 THIS is the key */
+
+  max-width: 1600px;
+  max-height: 80vh;
+
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #0067dd
+  );
+
+  border-radius: 36px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 0 70px rgba(180, 220, 255, 0.45);
+
+  padding: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  transition: transform 0.4s ease;
+  padding-bottom: 30px;
+}
+
+
+
+/* -------------------------------
+   COLLAPSED STATE (MESSAGE)
+   ------------------------------- */
+.final-canvas-card:not(.open) {
+  font-size: 26px;
+  line-height: 1;
+
+  font-family: 'Cormorant Garamond', serif;
+  color: #1f2f3d;
+
+  text-align: center;
+
+  animation: softPulse 3s infinite ease-in-out;
+}
+
+.final-canvas-card .card-collapsed {
+  max-width: 1100px;
+}
+
+
+
+/* Text block inside collapsed */
+.final-canvas-card .card-collapsed {
+  max-width: 900px;
+}
+
+/* -------------------------------
+   EXPANDED STATE (CANVAS ONLY)
+   ------------------------------- */
+.final-canvas-card.open {
+  max-height: 2000px; /* large enough for canvas */
+  animation: none;
+  transform: scale(1);
+  padding: 40px 48px; /* 🔥 vertical space added */
+}
+
+
+
+/* -------------------------------
+   CANVAS IMAGE
+   ------------------------------- */
+.canvas-image {
+  width: 100%;
+  height: auto;
+
+  max-width: 1300px;
+  max-height: calc(80vh - 80px); /* 🔥 accounts for padding */
+
+  object-fit: contain;
+
+  border-radius: 24px;
+  padding: 10px;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.18),
+    rgba(0, 0, 0, 0.55)
+  );
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.55),
+    0 0 40px rgba(160, 210, 255, 0.45);
+}
+
+
+/* -------------------------------
+   ANIMATIONS
+   ------------------------------- */
+@keyframes softPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(190, 230, 255, 0.25);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 36px rgba(190, 230, 255, 0.45);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(190, 230, 255, 0.25);
+  }
+}
+
+@keyframes canvasFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* -------------------------------
+   MOBILE TUNING
+   ------------------------------- */
+@media (max-width: 768px) {
+  .final-canvas-card {
+    padding: 36px 28px;
+  }
+
+  .final-canvas-card:not(.open) {
+    font-size: 18px;
+    max-height: 360px;
+  }
+
+  .canvas-image {
+    max-height: 55vh;
+    padding: 16px;
+  }
+}
+
+.track-btn {
+  background: rgba(255, 255, 255, 0.18);
+  border: none;
+  color: white;
+
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.track-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.15);
+}
+
+.track-btn:active {
+  transform: scale(0.95);
+}
+
+.track-btn.prev {
+  margin-right: 6px;
+}
+
+.track-btn.next {
+  margin-left: 6px;
+}
+.waiting-split {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  width: 100%;
+}
+
+.waiting-left {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+}
+
+.waiting-card {
+  flex: 1;
+  max-width: 520px;
+}
+
+@media (max-width: 900px) {
+  .waiting-split {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+.gif-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+/* ===== GIF CARD ===== */
+.gif-card {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f3f6fb 100%
+  );
+width: 420px;          /* 🔥 NEW */
+  max-width: 100%;
+  border-radius: 22px;
+  padding: 18px 18px 22px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+
+  /* Card depth */
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.6);
+
+  /* Make it feel important */
+  transform: translateY(-6px);
+}
+
+/* Header / credit */
+.gif-card-header {
+  font-family: 'Mountains of Christmas', cursive;
+  font-size: 17px;
+  font-weight: 700;
+  color: #2563eb;
+
+  text-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  user-select: none;
+}
+
+.credit-name {
+  color: #1d4ed8;
+}
+
+/* GIF itself */
+.gif-image {
+  width: 100%;          /* 🔥 FILL CARD */
+  max-width: 380px;     /* keeps proportions nice */
+  height: auto;
+
+  border-radius: 16px;
+
+  /* Visual pop */
+  box-shadow:
+    0 10px 22px rgba(0,0,0,0.35),
+    0 0 22px rgba(59,130,246,0.35);
+
+  background: white;
 }

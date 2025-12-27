@@ -1,0 +1,262 @@
+<audio #bdaySong src="Pictures/MikuSong.mp3" loop></audio>
+<!-- PAGE 1 -->
+<div *ngIf="currentPage === 1" class="page1-orange">
+
+  <h1 class="birthday-title" style="font-family: 'Cormorant Garamond', serif; color: red;" >Click On the Cat if you can!</h1>
+
+  <img #mainPicture 
+       class="amber-picture"
+       src="Pictures/AmberKitty.jpg"
+       (click)="onPictureClick()"
+       alt="Amber Picture">
+
+</div>
+
+
+<!-- PAGE 2 -->
+<!-- PAGE 2 — QUIZ PAGE -->
+<div *ngIf="currentPage === 2" class="full-page not-misa-page">
+  <div class="floating-fun">
+    <div class="fun">🎉</div>
+    <div class="fun">🐱</div>
+    <div class="fun">💫</div>
+    <div class="fun">🎂</div>
+  </div>
+  <div class="final-split">
+
+   
+
+    <div class="final-split-inner">
+
+      <!-- QUIZ CARD 1 -->
+      <div class="message-card quiz-card">
+        <h2 class="message-title">Question 1</h2>
+        <p class="question-text">Who is the reason amber cant play games?</p>
+
+        <button class="quiz-option"
+                (click)="checkAnswer(1, 'A')">MOMMY KADE</button>
+
+        <button class="quiz-option"
+                (click)="checkAnswer(1, 'B')">Her Kittens</button>
+
+        <button class="quiz-option"
+                (click)="checkAnswer(1, 'C')">Noba</button>
+      </div>
+
+
+      <!-- QUIZ CARD 2 -->
+      <div class="message-card quiz-card">
+        <h2 class="message-title">Question 2</h2>
+        <p class="question-text">What is amber's special skill</p>
+
+        <button class="quiz-option"
+                (click)="checkAnswer(2, 'A')">A Chaos Gremlin</button>
+
+        <button class="quiz-option"
+                (click)="checkAnswer(2, 'B')">Having Skill Issue</button>
+
+        <button class="quiz-option"
+                (click)="checkAnswer(2, 'C')">Yapping</button>
+      </div>
+
+
+      <!-- QUIZ CARD 3 -->
+      <div class="message-card quiz-card">
+        <h2 class="message-title">Question 3</h2>
+        <p class="question-text">How stinky is Amber?</p>
+
+        <button class="quiz-option"
+                (click)="checkAnswer(3, 'A')">Not stinky</button>
+
+        <button class="quiz-option"
+                (click)="checkAnswer(3, 'B')">Ultra Stinky</button>
+
+        <button class="quiz-option"
+                (click)="checkAnswer(3, 'C')">SUPER MAXIMUM STINKY</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="center-next-btn">
+    <button class="next-btn-section" (click)="currentPage = 3">
+      Next
+    </button>
+  </div>
+
+</div>
+
+<div *ngIf="currentPage === 3" class="full-page not-misa-page">
+  <div class="floating-fun">
+    <div class="fun">🎉</div>
+    <div class="fun">🐱</div>
+    <div class="fun">💫</div>
+    <div class="fun">🎂</div>
+  </div>
+  <div class="final-split">
+
+   
+
+    <div class="final-split-inner">
+
+      <!-- QUIZ CARD 1 -->
+      <div class="message-card quiz-card">
+        <h2 class="message-title">Question 4</h2>
+        <p class="question-text">Who calls amber "Vtuber Mommy"??</p>
+
+        <button class="quiz-option"
+                (click)="checkAnswer(4, 'A')">Kade</button>
+
+        <button class="quiz-option"
+                (click)="checkAnswer(4, 'B')">Noba</button>
+
+        <button class="quiz-option"
+                (click)="checkAnswer(4, 'C')">PP</button>
+      </div>
+
+
+      <!-- QUIZ CARD 2 -->
+      <div class="message-card quiz-card">
+        <h2 class="message-title">Question 5</h2>
+        <p class="question-text">Is amber good at valorant?</p>
+
+        <button class="quiz-option"
+                (click)="checkAnswer(5, 'A')">She has skill issues</button>
+
+        <button class="quiz-option"
+                (click)="checkAnswer(5, 'B')">No</button>
+
+        <button class="quiz-option"
+                (click)="checkAnswer(5, 'C')">Maybe</button>
+      </div>
+
+
+      <!-- QUIZ CARD 3 -->
+      <div class="message-card quiz-card">
+        <h2 class="message-title">Question 6</h2>
+        <p class="question-text">Who's Amber's fav Mod?</p>
+
+        <button class="quiz-option"
+                (click)="checkAnswer(6, 'A')">Nova/ Marie/ Kade</button>
+
+        <button class="quiz-option"
+                (click)="checkAnswer(6, 'B')">Ann / Moss / Paige / Hadi</button>
+
+        <button class="quiz-option"
+                (click)="checkAnswer(6, 'C')">This is only correct answer - PP</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="center-next-btn">
+    <button class="next-btn-section" (click)="currentPage = 4">
+      Next
+    </button>
+  </div>
+
+</div>
+
+<!-- PAGE 4 — SUSPENSE PAGE -->
+<!-- PAGE 4 — FRIENDLY SUSPENSE PAGE -->
+<div *ngIf="currentPage === 4" class="full-page friendly-suspense">
+
+  <div class="floating-fun">
+    <div class="fun">🎉</div>
+    <div class="fun">🐱</div>
+    <div class="fun">💫</div>
+    <div class="fun">🎂</div>
+  </div>
+
+  <div class="message-card friendly-card">
+    <h2 class="message-title">Important Question 👀</h2>
+
+    <p class="question-text" style="font-size: 1.4rem; text-align: center;">
+      Okay Amber… be honest.<br><br>
+      <b>Will you cry at end of this page??</b><br><br>
+      (I know you will stinky and I hope you do!! 😤)
+    </p>
+
+    <div class="friendly-buttons">
+      <button class="quiz-option friendly-btn"
+              (click)="currentPage = 5">Yes you will! 😭</button>
+
+      <button class="quiz-option friendly-btn"
+              (click)="currentPage = 5">Yes again! 😤</button>
+    </div>
+  </div>
+
+</div>
+<!-- PAGE 5 — BIG BIRTHDAY SURPRISE -->
+<div *ngIf="currentPage === 5" class="full-page birthday-surprise">
+ <div class="floating-fun">
+    <div class="fun">🎉</div>
+    <div class="fun">🐱</div>
+    <div class="fun">💫</div>
+    <div class="fun">🎂</div>
+  </div>
+
+
+  <div class="surprise-card">
+
+    <!-- LEFT IMAGE SLIDESHOW -->
+    <div class="side-images left-s">
+      <img [src]="leftImages[leftIndex]" class="side-img">
+    </div>
+
+    <!-- CENTER TEXT -->
+    <div class="center-message">
+      <h1 class="hb-text">HAPPY BIRTHDAY AMBER 🎉💛</h1>
+      <p class="hb-sub">You Deserve to get Silver in valorant , Get your gaming PC and Become a BIG STREAMER!! (you are gay!)</p>
+    </div>
+
+    <!-- RIGHT IMAGE SLIDESHOW -->
+   <div class="side-images right-s">
+      <img [src]="rightImages[rightIndex]" class="side-img">
+    </div>
+
+  </div>
+  <br>
+  <button class="next-btn-section" (click)="currentPage = 6">
+      Next
+    </button>
+
+</div>
+
+<!-- PAGE 6 — FINAL MESSAGE GRID -->
+<!-- PAGE 6 — FINAL MESSAGE GRID -->
+<!-- PAGE 6 — FRIEND MESSAGE GRID -->
+<div *ngIf="currentPage === 6" class="full-page final-page-bg">
+
+  <h1 class="final-title">HAPPY BIRTHDAY AMBER! 🎉💛</h1>
+  <p class="final-subtitle">Cry after reading this BISH and GIT GUD! ✨</p>
+
+  <div class="message-grid">
+
+    <div class="friend-card" style="font-family: 'DynaPuff', serif;"
+         *ngFor="let msg of friendMessages; let i = index"
+         [class.open]="msg.open"
+         [class.special-card]="i === 3"  
+         (click)="toggleCard(i)">
+
+      <!-- CLOSED STATE -->
+      <div class="card-collapsed" *ngIf="!msg.open">
+        CLICK TO REVEAL 🎁
+      </div>
+
+      <!-- OPEN STATE -->
+      <div class="card-expanded" *ngIf="msg.open">
+
+        <h3 class="friend-name">{{ msg.name }}</h3>
+
+        <p class="friend-text">{{ msg.text }}</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
